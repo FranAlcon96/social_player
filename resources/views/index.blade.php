@@ -158,8 +158,7 @@
 				<div class="contenido-info-section">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="text-light text-center">El protagonista eres tú</h2>
-							<p class="text-light text-center">Social player es una plataforma realizada por y para el disfrute de toda persona que ame el mundo de los videojuegos, y se encuentra totalmente abierta a sugerencias para poder mejorar cada día.</p>
+							<h2 class="text-light text-center">Grupos recomendados</h2>
 						</div>
 					</div>
 				</div>
