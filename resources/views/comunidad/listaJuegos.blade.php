@@ -21,15 +21,19 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-3 bg-dark">
+		<div class="col-md-2 bg-dark">
 			<h3 class="text-light text-center m-3">Filtrar juegos</h3>
-			<h6 class="text-light">Año de salida: </h6>
-			<div class="input-box">
-                <input class="form-control" id="number" name="rangoAnio" min="1980" max="2019" disabled onkeyup="changeRangeValue(this.value)"/>
-            <span class="euros">€</span>
-        	</div>
+			<h6 class="text-light mb-3">Año de salida: </h6>
+            <input class="form-control" id="number" name="rangoAnio" min="1980" max="2019"/>
+			<h6 class="text-light mb-3 mt-3">Género: </h6>
+			<select class="form-control">
+				<option value="accion">Acción</option>
+				<option value="aventura">Aventura</option>
+				<option value="rol">Rol</option>
+				<option value="moba">MOBA</option>
+			</select>
 		</div>
-		<div class="col-sm-9 list-juegos-section bg-dark">
+		<div class="col-md-10 list-juegos-section bg-dark">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-10 offset-sm-1">
