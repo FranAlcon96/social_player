@@ -19,7 +19,6 @@ class CrearTablaGrupo extends Migration
             $table->string('nombre');
             $table->integer('miembros');
             $table->timestamps();
-            $table->foreign('id_usuario')->references('id')->on('usuario');
             $table->foreign('id_juego')->references('id')->on('juego');
         });
     }

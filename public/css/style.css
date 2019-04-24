@@ -138,6 +138,39 @@ body{
 
 }
 
+/* Estilo de la pantalla de listado de juegos */
+.list-juegos-section{
+	min-height: 650px; /* mejorable en un futuro */
+	font-family: vicecity;
+}
+
+.img-juego-item{
+	width: 300px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+.cajita-juego-body{
+	background-color: #09111e;
+}
+
+.cajita-juego-header{
+	background-color: #152b56;
+	border: 1px solid black;
+}
+
+.cajita-juego-texto{
+	margin: 0 auto;
+}
+
+.cajita-juego-texto span{
+	font-size: 20px;
+}
+
+.cajita-juego-texto a{
+	width: 150px;
+}
+
 /* Estilo del formulario de login y registro */
 .contenedor-form-login{
 	margin: 0 auto;

@@ -4,9 +4,12 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/comunidad', function () {
-    return view('comunidad.comunidad');
-})->name('comunidad');
+Route::get('/grupo/{$id}', function () {
+    return view('comunidad.grupo');
+})->name('grupo');
+
+Route::get('/listaJuegos','JuegoController@index')->name('juegos');
+
 
 Route::get('/sesion', function () {
     return view('users.login');

@@ -59,39 +59,7 @@
 		<div class="col-12 content-section bg-dark" id="content-section">
 			<div class="container">
 				<h1 class="text-center text-light mt-3">Bienvenido {{ auth()->user()->usuario }}</h1>
-				<div class="card-group">
-				  <div class="card m-3">
-				    <img class="card-img-top" src="..." alt="Card image cap">
-				    <div class="card-body">
-				      <h5 class="card-title">Card title</h5>
-				      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-				    </div>
-				    <div class="card-footer">
-				      <small class="text-muted">Last updated 3 mins ago</small>
-				    </div>
-				  </div>
-				  <div class="card m-3">
-				    <img class="card-img-top" src="..." alt="Card image cap">
-				    <div class="card-body">
-				      <h5 class="card-title">Card title</h5>
-				      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-				    </div>
-				    <div class="card-footer">
-				      <small class="text-muted">Last updated 3 mins ago</small>
-				    </div>
-				  </div>
-				  <div class="card m-3">
-				    <img class="card-img-top" src="..." alt="Card image cap">
-				    <div class="card-body">
-				      <h5 class="card-title">Card title</h5>
-				      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-				    </div>
-				    <div class="card-footer">
-				      <small class="text-muted">Last updated 3 mins ago</small>
-				    </div>
-				  </div>
-				</div>
-
+				<h3 class="text-center text-light mt-3">Tús últimas aportaciones</h3>
 				<div class="card-group">
 				  <div class="card m-3">
 				    <img class="card-img-top" src="..." alt="Card image cap">

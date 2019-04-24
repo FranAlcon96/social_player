@@ -13,12 +13,12 @@ class CrearTablaMiembro extends Migration
      */
     public function up()
     {
-        Schema::create('miembro', function (Blueprint $table) {
+        Schema::create('miembro_equipo', function (Blueprint $table) {
             $table->bigInteger('id_usuario')->unsigned();
             $table->bigInteger('id_equipo')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('usuario');
             $table->foreign('id_equipo')->references('id')->on('equipo');
-            $table->timestamps();            
+            $table->timestamps();
         });
     }
 
