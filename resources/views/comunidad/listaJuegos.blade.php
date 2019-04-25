@@ -22,7 +22,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-2 bg-dark">
-			<h3 class="text-light text-center m-3">Filtrar juegos</h3>
+			<h3 class="text-light text-center mb-3 mt-3">Filtrar juegos</h3>
 			<h6 class="text-light mb-3">Año de salida: </h6>
             <input class="form-control" id="number" name="rangoAnio" min="1980" max="2019"/>
 			<h6 class="text-light mb-3 mt-3">Género: </h6>
@@ -36,27 +36,15 @@
 		<div class="col-md-10 list-juegos-section bg-dark">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-10 offset-sm-1">
+					<div class="col-sm-10 offset-sm-1 text-center mb-4">
 						@foreach($juegos as $i)
-						<div class="card cajita-juego m-4">
-						  <div class="card-header cajita-juego-header text-light"><h3>{{ $i->nombre }}</h3></div>
-						  <div class="card-body cajita-juego-body">
-						  	<div class="row">
-						  		<div class="col-md-6">
-						  			<img class="img-fluid img-juego-item m-auto" src="img/{{ $i->imagen }}">
-						  		</div>
-						  		<div class="col-md-6">
-						  			<div class="m-3 text-light cajita-juego-texto">
-							  			<span>Género: {{ $i->genero }}</span><br>
-							  			<span>Plataformas: {{ $i->plataformas }}</span><br>
-							  			<span>Año: {{ $i->anio }}</span><br>
-							  			<span>Opiniones: {{ $i->opiniones }}</span><br>
-							  			<a href="#" class="btn btn-primary mt-3">Ver más</a>
-						  			</div>
-						  		</div>
-						  	</div>
-						  </div>
-						</div>
+							<h2 class="text-light mb-3 mt-3"><i class="fas fa-gamepad"></i> {{ $i->nombre }}</h2>
+							<span class="text-light mt-2 mb-3">Género: {{ $i->genero }}</span>
+							<span class="text-light mt-2 mb-3"> | </span>
+							<span class="text-light mt-2 mb-3">Año: {{ $i->anio }}</span>
+							<span class="text-light mt-2 mb-3"> | </span>
+							<a href="#">Ver ficha</a>
+							<hr class="style-four">
 						@endforeach
 					</div>
 				</div>
