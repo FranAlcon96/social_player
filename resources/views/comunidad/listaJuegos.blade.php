@@ -21,14 +21,13 @@
 				<div class="row">
 					<div class="col-sm-10 offset-sm-1 text-center mb-4">
 						<h1 class="text-light text-center m-3 mb-5">Lista de juegos</h1>
-
 						@foreach($juegos as $i)
 							<h2 class="text-light mb-3 mt-3"><i class="fas fa-gamepad"></i> {{ $i->nombre }}</h2>
 							<span class="text-light mt-2 mb-3">Género: {{ $i->genero }}</span>
 							<span class="text-light mt-2 mb-3"> | </span>
 							<span class="text-light mt-2 mb-3">Año: {{ $i->anio }}</span>
 							<span class="text-light mt-2 mb-3"> | </span>
-							<a href="#">Ver ficha</a>
+							<a href="{{ route('juego', [$i->id]) }}">Ver ficha</a>
 							<hr class="style-four">
 						@endforeach
 					</div>

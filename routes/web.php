@@ -9,7 +9,7 @@ Route::get('/grupo/{$id}', function () {
 })->name('grupo');
 
 Route::get('/listaJuegos','JuegoController@index')->name('juegos');
-
+Route::get('/show/{id}','JuegoController@show')->name('juego');
 
 Route::get('/sesion', function () {
     return view('users.login');

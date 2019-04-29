@@ -46,7 +46,8 @@ class JuegoController extends Controller
      */
     public function show($id)
     {
-        //
+        $juego = Juego::find($id);
+        return view('comunidad.juego', compact('juego'));
     }
 
     /**
