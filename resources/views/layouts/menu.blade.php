@@ -11,12 +11,10 @@
                   Comunidad
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('juegos') }}">Ver juegos</a>
-                  <a class="dropdown-item" href="#">Buscar usuario</a>
-                  <a class="dropdown-item" href="#">Buscar grupo</a>
+                  <a class="dropdown-item" href="{{ route('juegos') }}">Juegos</a>
+                  <a class="dropdown-item" href="#">Grupos</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Mis opiniones</a>
-                  <a class="dropdown-item" href="#">Mis grupos</a>
+                  <a class="dropdown-item" href="#">Mis publicaciones</a>
                 </div>
               </li>
 

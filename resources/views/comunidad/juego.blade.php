@@ -44,43 +44,264 @@
 						</table>
 					</div>
 				</div>
-				<h3 class="text-center text-light mt-5 mb-3">Torneos de {{ $juego->nombre }}</h3>
+				<h3 class="text-center text-light mt-5 mb-5">Torneos de {{ $juego->nombre }}</h3>
 				<div class="row">
 					<div class="col-12 mb-4">
-			            <ul class="list-unstyled text-center lista-torneos">
-			              <li>
-			                <a href="#!">Torneo 1</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 2</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 3</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 4</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 5</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 6</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 7</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 8</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 9</a>
-			              </li>
-			              <li>
-			                <a href="#!">Torneo 10</a>
-			              </li>
-			            </ul>
+                        <section id="team" class="opiniones pb-5">
+                            <div class="container">
+                                <div class="row">
+                                    <!-- Team member -->
+                                    <div class="col-xs-12 col-sm-6 col-md-4">
+                                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="mainflip">
+                                                <div class="frontside">
+                                                    <div class="card">
+                                                        <div class="card-body text-center">
+                                                            <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_04.jpg" alt="card image"></p>
+                                                            <h4 class="card-title">Sunlimetech</h4>
+                                                            <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                            <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="backside">
+                                                    <div class="card">
+                                                        <div class="card-body text-center mt-4">
+                                                            <h4 class="card-title">Sunlimetech</h4>
+                                                            <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-facebook"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-twitter"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-skype"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-google"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ./Team member -->
+                                    <!-- Team member -->
+                                    <div class="col-xs-12 col-sm-6 col-md-4">
+                                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="mainflip">
+                                                <div class="frontside">
+                                                    <div class="card">
+                                                        <div class="card-body text-center">
+                                                            <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_05.png" alt="card image"></p>
+                                                            <h4 class="card-title">Sunlimetech</h4>
+                                                            <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                            <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="backside">
+                                                    <div class="card">
+                                                        <div class="card-body text-center mt-4">
+                                                            <h4 class="card-title">Sunlimetech</h4>
+                                                            <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-facebook"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-twitter"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-skype"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-google"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ./Team member -->
+                                    <!-- Team member -->
+                                    <div class="col-xs-12 col-sm-6 col-md-4">
+                                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="mainflip">
+                                                <div class="frontside">
+                                                    <div class="card">
+                                                        <div class="card-body text-center">
+                                                            <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_06.jpg" alt="card image"></p>
+                                                            <h4 class="card-title">Sunlimetech</h4>
+                                                            <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                            <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="backside">
+                                                    <div class="card">
+                                                        <div class="card-body text-center mt-4">
+                                                            <h4 class="card-title">Sunlimetech</h4>
+                                                            <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-facebook"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-twitter"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-skype"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                                        <i class="fa fa-google"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ./Team member -->
+                                </div>
+                            </div>
+                        </section>
 					</div>
 				</div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-light text-center">Opiniones de los usuarios</h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="panel panel-default widget">
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item mb-3">
+                                                <div class="row">
+                                                    <div class="col-xs-2 col-md-1">
+                                                        <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
+                                                    <div class="col-xs-10 col-md-11">
+                                                        <div>
+                                                            <a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">
+                                                                Google Style Login Page Design Using Bootstrap</a>
+                                                            <div class="mic-info">
+                                                                By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment-text">
+                                                            Awesome design
+                                                        </div>
+                                                        <div class="action">
+                                                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
+                                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                            </button>
+                                                            <button type="button" class="btn btn-success btn-xs" title="Approved">
+                                                                <span class="glyphicon glyphicon-ok"></span>
+                                                            </button>
+                                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
+                                                                <span class="glyphicon glyphicon-trash"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item mb-3">
+                                                <div class="row">
+                                                    <div class="col-xs-2 col-md-1">
+                                                        <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
+                                                    <div class="col-xs-10 col-md-11">
+                                                        <div>
+                                                            <a href="http://bootsnipp.com/BhaumikPatel/snippets/Obgj">Admin Panel Quick Shortcuts</a>
+                                                            <div class="mic-info">
+                                                                By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment-text">
+                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+                                                        </div>
+                                                        <div class="action">
+                                                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
+                                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                            </button>
+                                                            <button type="button" class="btn btn-success btn-xs" title="Approved">
+                                                                <span class="glyphicon glyphicon-ok"></span>
+                                                            </button>
+                                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
+                                                                <span class="glyphicon glyphicon-trash"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item mb-3">
+                                                <div class="row">
+                                                    <div class="col-xs-2 col-md-1">
+                                                        <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
+                                                    <div class="col-xs-10 col-md-11">
+                                                        <div>
+                                                            <a href="http://bootsnipp.com/BhaumikPatel/snippets/4ldn">Cool Sign Up</a>
+                                                            <div class="mic-info">
+                                                                By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment-text">
+                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+                                                        </div>
+                                                        <div class="action">
+                                                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
+                                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                            </button>
+                                                            <button type="button" class="btn btn-success btn-xs" title="Approved">
+                                                                <span class="glyphicon glyphicon-ok"></span>
+                                                            </button>
+                                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
+                                                                <span class="glyphicon glyphicon-trash"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
