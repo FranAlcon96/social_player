@@ -3,18 +3,8 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-2 bg-dark">
-			<h3 class="text-light text-center mb-3 mt-3">Filtrar juegos</h3>
-			<h6 class="text-light mb-3">Nombre:</h6>
-			<input type="text" name="filtro-nombre" class="form-control">
-			<h6 class="text-light mb-3 mt-3">Año de salida: </h6>
-            <input class="form-control" id="number" name="rangoAnio" min="1980" max="2019"/>
-			<h6 class="text-light mb-3 mt-3">Género: </h6>
-			<select class="form-control">
-				<option value="accion">Acción</option>
-				<option value="aventura">Aventura</option>
-				<option value="rol">Rol</option>
-				<option value="moba">MOBA</option>
-			</select>
+			<h3 class="text-light text-center mb-3 mt-3">Buscar juego</h3>
+			<input type="text" name="filtro-nombre" class="form-control mt-3" placeholder="Título">
 		</div>
 		<div class="col-md-10 list-juegos-section bg-dark">
 			<div class="container">

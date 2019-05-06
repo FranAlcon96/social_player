@@ -298,6 +298,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class="text-light text-center mb-3 mt-3">Publica tu opinión</h3>
+                                    <form method="post">
+                                        @csrf
+                                        <input type="number" name="puntuacion" max="10" min="0" class="form-control mb-3" placeholder="Puntuación">
+                                        <textarea name="texto" class="form-control mb-3" rows="10" placeholder="Escribe tu opinión ..."></textarea>
+                                        <input type="submit" name="enviar" value="Publicar" class="btn btn-primary col-12 mb-4">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
