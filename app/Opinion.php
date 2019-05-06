@@ -8,6 +8,6 @@ class Opinion extends Model
 {
     protected $table = 'opinion';
     protected $fillable = [
-        'nombre', 'apellidos', 'edad','email','usuario','password','juego_favorito'
+        'id', 'id_usuario', 'id_juego','titulo','texto','puntuacion'
     ];
 }

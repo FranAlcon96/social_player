@@ -44,7 +44,7 @@
 						</table>
 					</div>
 				</div>
-				<h3 class="text-center text-light mt-5 mb-5">Torneos de {{ $juego->nombre }}</h3>
+				<h3 class="text-center text-light mt-5 mb-3">Torneos de {{ $juego->nombre }}</h3>
 				<div class="row">
 					<div class="col-12 mb-4">
                         <section id="team" class="opiniones pb-5">
@@ -201,116 +201,64 @@
 				</div>
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="text-light text-center">Opiniones de los usuarios</h3>
+                        <h3 class="text-light text-center mb-3">Opiniones de los usuarios</h3>
                         <div class="container">
                             <div class="row">
-                                <div class="panel panel-default widget">
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item mb-3">
-                                                <div class="row">
-                                                    <div class="col-xs-2 col-md-1">
-                                                        <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                                                    <div class="col-xs-10 col-md-11">
-                                                        <div>
-                                                            <a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">
-                                                                Google Style Login Page Design Using Bootstrap</a>
-                                                            <div class="mic-info">
-                                                                By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013
+                                <div class="col-12">
+                                    <div class="panel panel-default widget cajita-opinion">
+                                        <div class="panel-body">
+                                            <ul class="list-group">
+                                                @forelse ($opiniones as $opinion)
+                                                <li class="list-group-item mb-3 {{ $opinion->puntuacion >= 5 ? 'positiva' : 'negativa' }}">
+                                                    <div class="row">
+                                                        <div class="col-xs-10 col-md-11">
+                                                            <div>
+                                                                <h3>@if ($opinion->puntuacion>=5)
+                                                                        <i class="fas fa-thumbs-up"></i>
+                                                                    @else
+                                                                        <i class="fas fa-thumbs-down"></i>
+                                                                    @endif
+                                                                    {{ $opinion->titulo }}</h3>
+                                                                <div class="mic-info">
+                                                                    <h5>Publicado por <a href="#">{{ $opinion->usuario }}</a>
+                                                                    <?php $date = Carbon\Carbon::parse($opinion->created_at);?>
+                                                                     <small>{{  $date->diffForHumans()}}</small></h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="comment-text">
+                                                                <p class="texto-opinion">{{ $opinion->texto }}</p>
+                                                                <span>Puntuación: {{ $opinion->puntuacion }}</span>
                                                             </div>
                                                         </div>
-                                                        <div class="comment-text">
-                                                            Awesome design
-                                                        </div>
-                                                        <div class="action">
-                                                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                                                <span class="glyphicon glyphicon-pencil"></span>
-                                                            </button>
-                                                            <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                                                <span class="glyphicon glyphicon-ok"></span>
-                                                            </button>
-                                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                                                <span class="glyphicon glyphicon-trash"></span>
-                                                            </button>
-                                                        </div>
                                                     </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item mb-3">
-                                                <div class="row">
-                                                    <div class="col-xs-2 col-md-1">
-                                                        <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                                                    <div class="col-xs-10 col-md-11">
-                                                        <div>
-                                                            <a href="http://bootsnipp.com/BhaumikPatel/snippets/Obgj">Admin Panel Quick Shortcuts</a>
-                                                            <div class="mic-info">
-                                                                By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
-                                                            </div>
-                                                        </div>
-                                                        <div class="comment-text">
-                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                                                        </div>
-                                                        <div class="action">
-                                                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                                                <span class="glyphicon glyphicon-pencil"></span>
-                                                            </button>
-                                                            <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                                                <span class="glyphicon glyphicon-ok"></span>
-                                                            </button>
-                                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                                                <span class="glyphicon glyphicon-trash"></span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item mb-3">
-                                                <div class="row">
-                                                    <div class="col-xs-2 col-md-1">
-                                                        <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                                                    <div class="col-xs-10 col-md-11">
-                                                        <div>
-                                                            <a href="http://bootsnipp.com/BhaumikPatel/snippets/4ldn">Cool Sign Up</a>
-                                                            <div class="mic-info">
-                                                                By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
-                                                            </div>
-                                                        </div>
-                                                        <div class="comment-text">
-                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                                                        </div>
-                                                        <div class="action">
-                                                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                                                <span class="glyphicon glyphicon-pencil"></span>
-                                                            </button>
-                                                            <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                                                <span class="glyphicon glyphicon-ok"></span>
-                                                            </button>
-                                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                                                <span class="glyphicon glyphicon-trash"></span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                                </li>
+                                                @empty
+                                                    <span class="text-light">No hay opiniones registradas acerca de este juego, ¡ Sé el primero !</span>
+                                                @endforelse
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        @guest
+                        <div class="text-center mb-3 mt-3">
+                            <span class="text-light"><a href="#">Inicia sesión</a> para publicar tu opinión</span>
+                        </div>
+                        @else
                             <div class="row">
                                 <div class="col-12">
-                                    <h3 class="text-light text-center mb-3 mt-3">Publica tu opinión</h3>
-                                    <form method="post">
+                                    <h3 class="text-light text-center mb-3 mt-5">Publica tu opinión</h3>
+                                    <form method="post" action="{{ route('crearOpinion',[$juego->id,auth()->user()->id]) }}" class="form-opinion">
                                         @csrf
-                                        <input type="number" name="puntuacion" max="10" min="0" class="form-control mb-3" placeholder="Puntuación">
-                                        <textarea name="texto" class="form-control mb-3" rows="10" placeholder="Escribe tu opinión ..."></textarea>
-                                        <input type="submit" name="enviar" value="Publicar" class="btn btn-primary col-12 mb-4">
+                                        <input type="text" name="titulo" class="form-control mb-3 col-md-6" placeholder="Título">
+                                        <input type="number" name="puntuacion" max="10" min="0" class="form-control mb-3 col-md-6" placeholder="Puntuación">
+                                        <textarea name="texto" class="form-control mb-3 col-md-6" rows="5" placeholder="Escribe tu opinión ..."></textarea>
+                                        <button type="submit" name="enviar" class="btn btn-primary enviar" id="botonEnviarOpinion">Publicar</button>
                                     </form>
                                 </div>
                             </div>
+                        @endguest
                         </div>
-
                     </div>
                 </div>
 			</div>

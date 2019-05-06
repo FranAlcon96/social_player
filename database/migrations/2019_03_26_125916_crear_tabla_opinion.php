@@ -18,6 +18,7 @@ class CrearTablaOpinion extends Migration
             $table->bigInteger('id_usuario')->unsigned();
             $table->bigInteger('id_juego')->unsigned();
             $table->longText('texto');
+            $table->string('titulo');
             $table->integer('puntuacion');
             $table->foreign('id_usuario')->references('id')->on('usuario');
             $table->foreign('id_juego')->references('id')->on('juego');
