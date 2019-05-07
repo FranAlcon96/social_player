@@ -50,7 +50,12 @@ class JuegoController extends Controller
     public function show($id)
     {
         $juego = Juego::find($id);
-        $opiniones = DB::select('select o.titulo, o.created_at, o.texto, o.puntuacion, u.usuario from opinion as o, usuario as u where id_juego = ? AND u.id = o.id_usuario', [$id]);
+        /*$opiniones = DB::select('select o.titulo, o.created_at, o.texto, o.puntuacion, u.usuario from opinion as o, usuario as u where id_juego = ? AND u.id = o.id_usuario', [$id])->paginate();*/
+        $opiniones = DB::table('opinion')
+        ->where('id_juego','=',$id)
+        ->join('usuario', 'opinion.id_usuario', '=', 'usuario.id')
+        ->select('opinion.titulo', 'opinion.texto', 'opinion.puntuacion', 'opinion.created_at', 'opinion.updated_at', 'usuario.usuario')
+        ->paginate(5);
         return view('comunidad.juego', compact('juego','opiniones'));
     }
 

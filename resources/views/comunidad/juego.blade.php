@@ -238,6 +238,7 @@
                                                 <span class="text-light text-center">No hay opiniones registradas de este juego, ¡ Sé el primero !</span>
                                             </div>
                                             @endforelse
+                                            {{ $opiniones->links() }}
                                         </div>
                                     </div>
                                 </div>
