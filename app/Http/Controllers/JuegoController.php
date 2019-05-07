@@ -16,7 +16,7 @@ class JuegoController extends Controller
      */
     public function index()
     {
-        $juegos = Juego::all();
+        $juegos = Juego::latest()->paginate(10);
         return view('comunidad.listaJuegos', compact('juegos'));
     }
 

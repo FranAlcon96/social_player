@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 
 @section('contenido')
-@guest
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12 video-section" id="video-section">
@@ -13,7 +12,11 @@
 				<div class="contenido-info-section">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 class="text-light text-center text-uppercase">Bienvenidos a social player</h1>
+							@guest
+								<h1 class="text-light text-center text-uppercase">Bienvenidos a social player</h1>
+							@else
+								<h1 class="text-light text-center text-uppercase">Le damos la bienvenida a social player {{ auth()->user()->usuario }}</h1>
+							@endguest
 							<h5 class="text-light text-center">Tu red social de videojuegos.</h5>
 						</div>
 					</div>
@@ -52,52 +55,6 @@
 		</div>
 	</div>
 </div>
-@else
-
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-12 content-section bg-dark" id="content-section">
-			<div class="container">
-				<h1 class="text-center text-light mt-3">Bienvenido {{ auth()->user()->usuario }}</h1>
-				<h3 class="text-center text-light mt-3">Tús últimas aportaciones</h3>
-				<div class="card-group">
-				  <div class="card m-3">
-				    <img class="card-img-top" src="..." alt="Card image cap">
-				    <div class="card-body">
-				      <h5 class="card-title">Card title</h5>
-				      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-				    </div>
-				    <div class="card-footer">
-				      <small class="text-muted">Last updated 3 mins ago</small>
-				    </div>
-				  </div>
-				  <div class="card m-3">
-				    <img class="card-img-top" src="..." alt="Card image cap">
-				    <div class="card-body">
-				      <h5 class="card-title">Card title</h5>
-				      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-				    </div>
-				    <div class="card-footer">
-				      <small class="text-muted">Last updated 3 mins ago</small>
-				    </div>
-				  </div>
-				  <div class="card m-3">
-				    <img class="card-img-top" src="..." alt="Card image cap">
-				    <div class="card-body">
-				      <h5 class="card-title">Card title</h5>
-				      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-				    </div>
-				    <div class="card-footer">
-				      <small class="text-muted">Last updated 3 mins ago</small>
-				    </div>
-				  </div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-@endif
-@guest
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12 info-section" id="info-section">
@@ -118,21 +75,4 @@
 		</div>
 	</div>
 </div>
-@else
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-12 info-section">
-			<div class="container">
-				<div class="contenido-info-section">
-					<div class="row">
-						<div class="col-12">
-							<h2 class="text-light text-center">Grupos recomendados</h2>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-@endguest
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Opinion;
 use App\Juego;
+use DB;
 
 class OpinionController extends Controller
 {
@@ -49,8 +50,20 @@ class OpinionController extends Controller
             'puntuacion' => request('puntuacion'),
         ]);
 
+        //calcular puntuación media
+        $aux = DB::table('opinion')->get()->where('id_juego','=',$id_juego);
+        $media = 0;
+        $contador = 0;
+        foreach ($aux as $p) {
+            $media = $media + $p->puntuacion;
+            $contador++;
+        }
+        $media = $media / $contador;
+
+        //sumar opiniones al juego y añadir la media cada vez que se registre una opinión
         $juego = Juego::find($id_juego);
         $juego->opiniones = $juego->opiniones+1;
+        $juego->puntuacion_media = $media;
         $juego->save();
 
         return redirect()->route('juego',[$id_juego]);
