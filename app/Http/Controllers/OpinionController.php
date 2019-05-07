@@ -39,9 +39,10 @@ class OpinionController extends Controller
     {
         request()->validate([
             'titulo' => 'required',
-            'puntuacion' => 'required',
-            'texto' => 'required'
+            'puntuacion' => 'required|max:10|min:1',
+            'texto' => 'required|min:10'
         ]);
+
         $opinion =  Opinion::create([
             'id_usuario' => $id_usuario,
             'id_juego' => $id_juego,
