@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaMiembrosGrupo extends Migration
+class CrearTablaMensajeGrupo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CrearTablaMiembrosGrupo extends Migration
      */
     public function up()
     {
-        Schema::create('miembro_grupo', function (Blueprint $table) {
+        Schema::create('mensaje', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->longText('texto');
             $table->bigInteger('id_usuario')->unsigned();
             $table->bigInteger('id_grupo')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('usuario');
@@ -30,6 +31,6 @@ class CrearTablaMiembrosGrupo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('miembro_grupo');
+        Schema::dropIfExists('mensaje');
     }
 }
