@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Opinion;
+use App\Juego;
 
 class OpinionController extends Controller
 {
@@ -35,6 +36,11 @@ class OpinionController extends Controller
      */
     public function store(Request $request,$id_juego,$id_usuario)
     {
+        request()->validate([
+            'titulo' => 'required',
+            'puntuacion' => 'required',
+            'texto' => 'required'
+        ]);
         $opinion =  Opinion::create([
             'id_usuario' => $id_usuario,
             'id_juego' => $id_juego,
@@ -42,6 +48,10 @@ class OpinionController extends Controller
             'texto' => request('texto'),
             'puntuacion' => request('puntuacion'),
         ]);
+
+        $juego = Juego::find($id_juego);
+        $juego->opiniones = $juego->opiniones+1;
+        $juego->save();
 
         return redirect()->route('juego',[$id_juego]);
     }

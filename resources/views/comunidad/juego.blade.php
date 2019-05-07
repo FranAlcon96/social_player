@@ -213,12 +213,12 @@
                                                     <div class="row">
                                                         <div class="col-xs-10 col-md-11">
                                                             <div>
-                                                                <h4>@if ($opinion->puntuacion>=5)
+                                                                <h3>@if ($opinion->puntuacion>=5)
                                                                         <i class="fas fa-thumbs-up"></i>
                                                                     @else
                                                                         <i class="fas fa-thumbs-down"></i>
                                                                     @endif
-                                                                    {{ $opinion->titulo }}</h4>
+                                                                    {{ $opinion->titulo }}</h3>
                                                                 <div class="mic-info">
                                                                     <h5>Publicado por <a href="#">{{ $opinion->usuario }}</a>
                                                                     <?php $date = Carbon\Carbon::parse($opinion->created_at);?>
@@ -233,16 +233,14 @@
                                                     </div>
                                                 </li>
                                             </ul>
+                                            @empty
+                                            <div class="text-center">
+                                                <span class="text-light text-center">No hay opiniones registradas de este juego, ¡ Sé el primero !</span>
+                                            </div>
+                                            @endforelse
                                         </div>
                                     </div>
                                 </div>
-                                @empty
-                                <div class="col-12 text-center">
-                                    <h6 class="text-light text-center">
-                                        No hay opiniones sobre este juego, ¡ sé el primero en opinar !
-                                    </h6>
-                                </div>
-                                @endforelse
                             </div>
                         @guest
                         <div class="text-center mb-3 mt-3">
@@ -255,9 +253,12 @@
                                     <form method="post" action="{{ route('crearOpinion',[$juego->id,auth()->user()->id]) }}" class="form-opinion">
                                         @csrf
                                         <input type="text" name="titulo" class="form-control mb-3 col-md-6" placeholder="Título">
+                                        {!! $errors->first('titulo','<div class="text-center"><small class="text-danger text-center">:message</small></div><br>') !!}
                                         <input type="number" name="puntuacion" max="10" min="0" class="form-control mb-3 col-md-6" placeholder="Puntuación">
+                                        {!! $errors->first('puntuacion','<div class="text-center"><small class="text-danger text-center">:message</small></div><br>') !!}
                                         <textarea name="texto" class="form-control mb-3 col-md-6" rows="5" placeholder="Escribe tu opinión ..."></textarea>
-                                        <center><button type="submit" name="enviar" class="btn btn-primary mb-3 enviar" id="botonEnviarOpinion">Publicar</button></center>
+                                        {!! $errors->first('texto','<div class="text-center"><small class="text-danger text-center">:message</small></div><br>') !!}
+                                        <center><button type="submit" name="enviar" class="btn btn-primary enviar mb-3" id="botonEnviarOpinion">Publicar</button></center>
                                     </form>
                                 </div>
                             </div>
