@@ -50,11 +50,6 @@ class JuegoController extends Controller
     public function show($id)
     {
         $juego = Juego::find($id);
-        /*$opiniones = Opinion::latest()
-            ->where('id_juego','=',$id)
-            ->paginate(5);
-            no se como sacar el nombre de usuario*/
-        /*select o.titulo, u.usuario from opinion as o, usuario as u where id_juego = 1 AND u.id = o.id_usuario*/
         $opiniones = DB::select('select o.titulo, o.created_at, o.texto, o.puntuacion, u.usuario from opinion as o, usuario as u where id_juego = ? AND u.id = o.id_usuario', [$id]);
         return view('comunidad.juego', compact('juego','opiniones'));
     }

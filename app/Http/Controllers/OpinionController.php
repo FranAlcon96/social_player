@@ -43,7 +43,7 @@ class OpinionController extends Controller
             'puntuacion' => request('puntuacion'),
         ]);
 
-
+        return redirect()->route('juego',[$id_juego]);
     }
 
     /**
