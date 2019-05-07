@@ -16,10 +16,12 @@ class CrearTablaGrupo extends Migration
         Schema::create('grupo', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_juego')->unsigned();
+            $table->bigInteger('id_usuario')->unsigned();
             $table->string('nombre');
             $table->integer('miembros');
             $table->timestamps();
             $table->foreign('id_juego')->references('id')->on('juego');
+            $table->foreign('id_usuario')->references('id')->on('usuario');
         });
     }
 
