@@ -13,6 +13,7 @@ Route::get('/show/{id}','JuegoController@show')->name('juego');
 
 Route::get('/listaGrupos','GrupoController@index')->name('grupos');
 Route::get('/crearGrupo','GrupoController@create')->name('crearGrupo');
+Route::post('/crearGrupo/{id_usuario}','GrupoController@store')->name('storeGrupo');
 
 Route::post('/opiniones/store/{id_juego}/{id_usuario}','OpinionController@store')->name('crearOpinion');
 

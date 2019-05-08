@@ -43,9 +43,22 @@ class GrupoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id_usuario)
     {
+       request()->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'id_juego' => 'required'
+        ]);
 
+        $grupo =  Grupo::create([
+            'id_usuario' => $id_usuario,
+            'id_juego' => request('id_juego'),
+            'nombre' => request('nombre'),
+            'descripcion' => request('descripcion'),
+            'miembros' => 0
+        ]);
+        return redirect()->route('grupos');
     }
 
     /**
