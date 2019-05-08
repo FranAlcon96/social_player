@@ -18,7 +18,7 @@ class CrearTablaGrupo extends Migration
             $table->bigInteger('id_juego')->unsigned();
             $table->bigInteger('id_usuario')->unsigned();
             $table->string('nombre');
-            $table->longText('descripcion')->nullable();
+            $table->longText('descripcion');
             $table->string('imagen')->nullable();
             $table->integer('miembros');
             $table->timestamps();

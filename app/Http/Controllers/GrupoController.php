@@ -43,7 +43,7 @@ class GrupoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id_usuario)
+    public function store(Request $request,$id_usuario)
     {
        request()->validate([
             'nombre' => 'required',
@@ -54,10 +54,11 @@ class GrupoController extends Controller
         $grupo =  Grupo::create([
             'id_usuario' => $id_usuario,
             'id_juego' => request('id_juego'),
-            'nombre' => request('nombre'),
             'descripcion' => request('descripcion'),
+            'nombre' => request('nombre'),
             'miembros' => 0
         ]);
+
         return redirect()->route('grupos');
     }
 
