@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div class="text-center mb-3">
-				<span class="text-light">¿ No encuentra ningún grupo ? Puedes crear el tuyo propio <a href="#">aquí</a></span>
+				<span class="text-light">¿ No encuentra ningún grupo ? Puedes crear el tuyo propio <a href="{{ route('crearGrupo') }}">aquí</a></span>
 			</div>
 		</div>
 	</div>

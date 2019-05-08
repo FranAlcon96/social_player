@@ -92,4 +92,5 @@ class JuegoController extends Controller
     {
         //
     }
+
 }

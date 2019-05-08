@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Grupo;
+use App\Juego;
 use DB;
 
 class GrupoController extends Controller
@@ -32,7 +33,8 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        //
+        $juegos = Juego::all();
+        return view('comunidad.crearGrupo',compact('juegos'));
     }
 
     /**
@@ -43,7 +45,7 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
