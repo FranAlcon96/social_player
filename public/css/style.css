@@ -311,7 +311,9 @@ section .section-title {
 
 /* Estilo del listado de grupos disponibles */
 
-
+.cajita-grupo{
+  font-family: vicecity;
+}
 
 /* Estilo del formulario de login y registro */
 .contenedor-form-login{

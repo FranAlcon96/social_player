@@ -11,6 +11,8 @@ Route::get('/grupo/{$id}', function () {
 Route::get('/listaJuegos','JuegoController@index')->name('juegos');
 Route::get('/show/{id}','JuegoController@show')->name('juego');
 
+Route::get('/listaGrupos','GrupoController@index')->name('grupos');
+
 Route::post('/opiniones/store/{id_juego}/{id_usuario}','OpinionController@store')->name('crearOpinion');
 
 Route::get('/sesion', function () {

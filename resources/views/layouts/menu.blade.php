@@ -12,7 +12,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('juegos') }}">Juegos</a>
-                  <a class="dropdown-item" href="#">Grupos</a>
+                  <a class="dropdown-item" href="{{ route('grupos') }}">Grupos</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Mis publicaciones</a>
                 </div>
