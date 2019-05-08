@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Grupo;
+use DB;
 
 class GrupoController extends Controller
 {
@@ -13,7 +15,14 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        return view('comunidad.listaGrupos');
+        //$grupos = Grupo::latest()->paginate(9);
+        $grupos = DB::table('grupo')
+        ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
+        ->join('juego','grupo.id_juego','=','juego.id')
+        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'usuario.usuario', 'juego.nombre AS titulo')
+        ->paginate(9);
+
+        return view('comunidad.listaGrupos',compact('grupos'));
     }
 
     /**

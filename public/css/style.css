@@ -134,7 +134,7 @@ body{
 
 /* Estilo de la pantalla de listado de juegos */
 .list-juegos-section{
-	min-height: 650px; /* mejorable en un futuro */
+	min-height: 650px;
 	font-family: vicecity;
 }
 
@@ -311,8 +311,30 @@ section .section-title {
 
 /* Estilo del listado de grupos disponibles */
 
+.contenedor-grupos{
+  min-height: 650px;
+}
+
 .cajita-grupo{
   font-family: vicecity;
+  height: 450px;
+}
+
+.enlaces_sin_estilo{
+  text-decoration: none;
+}
+
+.zoom{
+  transition: width 1s, height 1s, transform 1s;
+  -moz-transition: width 2s, height 2s, -moz-transform 2s;
+  -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
+  -o-transition: width 2s, height 2s,-o-transform 2s;
+}
+.zoom:hover{
+  transform : scale(1.1);
+  -moz-transform : scale(1.1);
+  -webkit-transform : scale(1.1);
+  -o-transform : scale(1.1);
 }
 
 /* Estilo del formulario de login y registro */
