@@ -7,7 +7,7 @@
 			<div class="container">
 				<div class="row">
 				@foreach ($grupos as $grupo)
-                    <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="col-xs-12 col-sm-6 col-md-4 mb-3">
                         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                             <div class="mainflip">
                                 <div class="frontside">
@@ -30,7 +30,7 @@
                                             @else
                                             <p class="card-text">{{ $grupo->descripcion }}</p>
                                             @endif
-                                            <a href="#">Ir a la página del grupo.</a>
+                                            <a href="{{ route('grupo',[$grupo->id]) }}">Ir a la página del grupo.</a>
                                         </div>
                                     </div>
                                 </div>

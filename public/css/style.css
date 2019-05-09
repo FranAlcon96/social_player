@@ -1,5 +1,4 @@
-/*Importación de fuentes*/
-
+/* Importación de fuentes y estilos generales de la página */
 @font-face {
   font-family: arcade;
   src: url('../fuentes/arcade/arcade.TTF');
@@ -21,6 +20,13 @@
 }
 
 /*Estilos generales y barra de navegación*/
+*{
+  font-family: vicecity;
+}
+
+h1{
+  font-family: aquamax;
+}
 body{
 	background-image: url('../img/background.jpg');
 	background-size: cover;
@@ -103,17 +109,10 @@ body{
 	font-size: 18px;
 }
 
-.contenido-info-section h1{
-	font-family: aquamax;
-}
 .contenido-info-section-botones .btn{
 	width: 150px;
 	margin: 5px;
 	font-size: 18px;
-}
-
-.content-section h2{
-	font-family: vicecity;
 }
 
 .cajita-info{
@@ -135,7 +134,6 @@ body{
 /* Estilo de la pantalla de listado de juegos */
 .list-juegos-section{
 	min-height: 650px;
-	font-family: vicecity;
 }
 
 .style-four {
@@ -154,21 +152,12 @@ body{
 
 .ficha-tecnica td{
 	border: 2px solid white;
-	font-family: vicecity;
 	font-size: 18px;
 }
 
 .lista-torneos li a{
 	font-size: 18px;
 	font-family: vicecity;
-}
-
-.titulo-juego{
-	font-family: aquamax;
-}
-
-.cajita-opinion{
-font-family: vicecity;
 }
 
 .texto-opinion{
@@ -187,7 +176,6 @@ font-family: vicecity;
 
 .contenedor-grupos{
   min-height: 650px;
-  font-family: vicecity;
 }
 
 .btn-primary:hover,
@@ -310,11 +298,28 @@ font-family: vicecity;
   margin: auto;
 }
 
-.img-grupos{
-  width: 100px;
+/* Estilo de la página de grupos */
+.img-grupo img{
+  width: 400px;
+  height:350px;
+  border-radius: 5%;
+  margin: 0 auto;
 }
 
-/* Estilo del formulario de login y registro */
+.texto-grupo{
+  font-size: 17px;
+}
+.cajita-miembro:parent {
+  display: block;
+  float: left;
+}
+.img-miembro{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+}
+
+/* Estilo de formularios */
 .contenedor-form-login{
 	margin: 0 auto;
 	margin-top: 25%;

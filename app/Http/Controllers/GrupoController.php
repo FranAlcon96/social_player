@@ -20,7 +20,7 @@ class GrupoController extends Controller
         $grupos = DB::table('grupo')
         ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
         ->join('juego','grupo.id_juego','=','juego.id')
-        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario', 'juego.nombre AS titulo','grupo.descripcion')
+        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario', 'juego.nombre AS titulo','grupo.descripcion','grupo.id')
         ->paginate(9);
 
         return view('comunidad.listaGrupos',compact('grupos'));
@@ -70,7 +70,13 @@ class GrupoController extends Controller
      */
     public function show($id)
     {
-        //
+        $grupo = DB::table('grupo')
+        ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
+        ->join('juego','grupo.id_juego','=','juego.id')
+        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario', 'juego.nombre AS titulo','grupo.descripcion','grupo.id')
+        ->where('grupo.id','=',$id)
+        ->first();
+        return view('comunidad.grupo',compact('grupo'));
     }
 
     /**
@@ -105,5 +111,9 @@ class GrupoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function membresia(){
+
     }
 }
