@@ -6,20 +6,38 @@
 			<h1 class="text-light text-center mt-3 mb-3">Lista de grupos</h1>
 			<div class="container">
 				<div class="row">
-				@forelse ($grupos as $grupo)
-				  <div class="col-sm-4 mb-4 contenedor-cajita">
-				    <div class="card cajita-grupo">
-				    <img class="card-img-top zoom" src="img/game_default.jpg">
-				      <div class="card-body text-center bg-secondary">
-				        <a href="#" class="enlaces_sin_estilo"><h5 class="card-title text-dark">{{ $grupo->nombre }}</h5></a>
-						<p class="text-left">{{ $grupo->titulo }}</p>
-						<p class="text-left">Miembros: 0</p>
-						<p class="text-left">Creador: {{ $grupo->usuario }}</p>
-				      </div>
-				    </div>
-				  </div>
-				  @empty
-				  @endforelse
+				@foreach ($grupos as $grupo)
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <img class="img-fluid" src="img/game_default.jpg" alt="card image">
+                                            <h4 class="card-title">{{ $grupo->nombre }}</h4>
+                                            <h6 class="card-text">Un grupo de {{ $grupo->titulo }}</h6>
+                                            <?php $date = Carbon\Carbon::parse($grupo->created_at);?>
+											<small>Creado {{ $date->diffForHumans() }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <h5 class="card-title">Creado por {{ $grupo->usuario }}</h5>
+                                            @if (strlen($grupo->descripcion)>200)
+                                            <p class="card-text">{{ substr($grupo->descripcion, 0,200) }} ... </p>
+                                            @else
+                                            <p class="card-text">{{ $grupo->descripcion }}</p>
+                                            @endif
+                                            <a href="#">Ir a la página del grupo.</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				  @endforeach
 				</div>
 			</div>
 			<div class="text-center mb-3">

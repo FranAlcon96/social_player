@@ -11,8 +11,9 @@
 						<input type="text" class="form-control" name="nombre" placeholder="Nombre">
 					</div>
 					{!! $errors->first('nombre','<div class="text-center"><small class="text-danger text-center">:message</small></div>') !!}
-					<textarea name="descripcion" class="form-control" rows="5" placeholder="Escriba algo..."></textarea>
-
+					<div class="form-group mt-3">
+						<textarea name="descripcion" class="form-control" rows="5" placeholder="Escriba algo..."></textarea>
+					</div>
 					{!! $errors->first('descripcion','<div class="text-center"><small class="text-danger text-center">:message</small></div>') !!}
 					<div class="form-group">
 						<select class="form-control" name="id_juego">

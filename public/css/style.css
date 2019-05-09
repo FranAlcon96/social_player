@@ -183,6 +183,13 @@ font-family: vicecity;
 	background-color: #ff8787;
 }
 
+/* Estilo del listado de grupos disponibles */
+
+.contenedor-grupos{
+  min-height: 650px;
+  font-family: vicecity;
+}
+
 .btn-primary:hover,
 .btn-primary:focus {
     background-color: #108d6f;
@@ -195,12 +202,6 @@ font-family: vicecity;
     color: #fff;
     background-color: #007b5e;
     border-color: #007b5e;
-}
-
-section .section-title {
-    text-align: center;
-    color: #007b5e;
-    text-transform: uppercase;
 }
 
 #team .card {
@@ -268,7 +269,7 @@ section .section-title {
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-transition: 1s;
+    -webkit-transition: 1.5s;
     -webkit-transform-style: preserve-3d;
     -moz-transition: 1s;
     -moz-transform-style: preserve-3d;
@@ -276,7 +277,7 @@ section .section-title {
     -o-transform-style: preserve-3d;
     -ms-transition: 1s;
     -ms-transform-style: preserve-3d;
-    transition: 1s;
+    transition: 1.5s;
     transform-style: preserve-3d;
 }
 
@@ -296,45 +297,21 @@ section .section-title {
 }
 
 .frontside .card .card-body img {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
 }
 
 .form-opinion .form-control{
-	margin: auto;
+  margin: auto;
 }
 
 #botonEnviarOpinion{
-	margin: auto;
+  margin: auto;
 }
 
-/* Estilo del listado de grupos disponibles */
-
-.contenedor-grupos{
-  min-height: 650px;
-}
-
-.cajita-grupo{
-  font-family: vicecity;
-  height: 450px;
-}
-
-.enlaces_sin_estilo{
-  text-decoration: none;
-}
-
-.zoom{
-  transition: width 1s, height 1s, transform 1s;
-  -moz-transition: width 2s, height 2s, -moz-transform 2s;
-  -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
-  -o-transition: width 2s, height 2s,-o-transform 2s;
-}
-.zoom:hover{
-  transform : scale(1.1);
-  -moz-transform : scale(1.1);
-  -webkit-transform : scale(1.1);
-  -o-transform : scale(1.1);
+.img-grupos{
+  width: 100px;
 }
 
 /* Estilo del formulario de login y registro */

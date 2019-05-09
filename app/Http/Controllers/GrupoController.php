@@ -20,7 +20,7 @@ class GrupoController extends Controller
         $grupos = DB::table('grupo')
         ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
         ->join('juego','grupo.id_juego','=','juego.id')
-        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'usuario.usuario', 'juego.nombre AS titulo')
+        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario', 'juego.nombre AS titulo','grupo.descripcion')
         ->paginate(9);
 
         return view('comunidad.listaGrupos',compact('grupos'));
