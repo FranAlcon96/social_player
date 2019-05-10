@@ -15,7 +15,11 @@
 						<?php $date = Carbon\Carbon::parse($grupo->created_at);?>
 						<h5 class="text-light text-center">Grupo creado por {{ $grupo->usuario }} <small>{{ $date->diffForHumans() }}</small></h5>
 						<div class="text-center">
-							<a href="#" class="btn btn-primary"><i class="fas fa-user-plus"></i> Unirse</a>
+							@if($count==0)
+							<a href="{{ route('membresia',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Unirse</a>
+							@else
+							<a href="{{ route('membresia',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Dejar de ser miembro</a>
+							@endif
 						</div>
 					</div>
 				</div>

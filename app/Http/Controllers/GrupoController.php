@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Grupo;
 use App\Juego;
+use App\MiembroGrupo;
 use DB;
 
 class GrupoController extends Controller
@@ -73,10 +74,14 @@ class GrupoController extends Controller
         $grupo = DB::table('grupo')
         ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
         ->join('juego','grupo.id_juego','=','juego.id')
-        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario', 'juego.nombre AS titulo','grupo.descripcion','grupo.id')
+        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario','grupo.id_usuario','juego.nombre AS titulo','grupo.descripcion','grupo.id')
         ->where('grupo.id','=',$id)
         ->first();
-        return view('comunidad.grupo',compact('grupo'));
+
+        $count = MiembroGrupo::where('id_grupo','=',$id)
+            ->where('id_usuario','=',$grupo->id_usuario)
+            ->count();
+        return view('comunidad.grupo',compact('grupo','count'));
     }
 
     /**
@@ -113,7 +118,13 @@ class GrupoController extends Controller
         //
     }
 
-    public function membresia(){
+    public function membresia($id_grupo,$id_usuario){
+         $comprobacion = DB::table('miembro_grupo')
+            ->select(DB::raw("COUNT(*) as count"))
+            ->where('id_grupo','=',$id_grupo)
+            ->where('id_usuario','=',$id_usuario)
+            ->get();
 
+        return $comprobacion;
     }
 }
