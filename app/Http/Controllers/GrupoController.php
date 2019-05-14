@@ -69,7 +69,7 @@ class GrupoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id,$id_usuario)
     {
         $grupo = DB::table('grupo')
         ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
@@ -79,9 +79,16 @@ class GrupoController extends Controller
         ->first();
 
         $count = MiembroGrupo::where('id_grupo','=',$id)
-            ->where('id_usuario','=',$grupo->id_usuario)
+            ->where('id_usuario','=',$id_usuario)
             ->count();
-        return view('comunidad.grupo',compact('grupo','count'));
+
+        $miembros = DB::table('miembro_grupo')
+        ->join('usuario', 'miembro_grupo.id_usuario', '=', 'usuario.id')
+        ->select('usuario.usuario','miembro_grupo.id_usuario')
+        ->where('miembro_grupo.id_grupo','=',$id)
+        ->get();
+
+        return view('comunidad.grupo',compact('grupo','count','miembros'));
     }
 
     /**
@@ -119,12 +126,17 @@ class GrupoController extends Controller
     }
 
     public function membresia($id_grupo,$id_usuario){
-         $comprobacion = DB::table('miembro_grupo')
-            ->select(DB::raw("COUNT(*) as count"))
-            ->where('id_grupo','=',$id_grupo)
-            ->where('id_usuario','=',$id_usuario)
-            ->get();
+        $miembro =  MiembroGrupo::create([
+            'id_usuario' => $id_usuario,
+            'id_grupo' => $id_grupo
+        ]);
+        return redirect(route('grupo',[$id_grupo,$id_usuario]));
+    }
 
-        return $comprobacion;
+    public function abandonar($id_grupo,$id_usuario){
+        $miembros = MiembroGrupo::where('id_grupo','=',$id_grupo)
+            ->where('id_usuario','=',$id_usuario)
+            ->delete();
+        return redirect(route('grupo',[$id_grupo,$id_usuario]));
     }
 }

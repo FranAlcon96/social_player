@@ -7,7 +7,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5 mb-3 img-grupo">
-						<img class="img-fluid" src="../../img/background.jpg">
+						<img class="img-fluid" src="../../../img/background.jpg">
 					</div>
 					<div class="col-md-7">
 						<h4 class="text-light mt-3 mb-3">Grupo de {{ $grupo->titulo }}</h4>
@@ -16,9 +16,9 @@
 						<h5 class="text-light text-center">Grupo creado por {{ $grupo->usuario }} <small>{{ $date->diffForHumans() }}</small></h5>
 						<div class="text-center">
 							@if($count==0)
-							<a href="{{ route('membresia',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Unirse</a>
+							<a href="{{ route('membresia',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Unirse al grupo</a>
 							@else
-							<a href="{{ route('membresia',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Dejar de ser miembro</a>
+							<a href="{{ route('membresiaAbandonar',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Abanadonar grupo</a>
 							@endif
 						</div>
 					</div>
@@ -35,18 +35,12 @@
 					<div class="col-md-5">
 						<h4 class="text-light text-center mt-3 mb-3">Miembros</h4>
 						<div class="row">
+							@foreach($miembros as $miembro)
 							<div>
-								<img src="../../img/background.jpg" class="img-miembro m-3">
-								<p class="text-light text-center">nombre</p>
+								<img src="../../../img/background.jpg" class="img-miembro m-3">
+								<p class="text-light text-center">{{ $miembro->usuario }}</p>
 							</div>
-							<div>
-								<img src="../../img/background.jpg" class="img-miembro m-3">
-								<p class="text-light text-center">nombre</p>
-							</div>
-							<div>
-								<img src="../../img/background.jpg" class="img-miembro m-3">
-								<p class="text-light text-center">nombre</p>
-							</div>
+							@endforeach
 						</div>
 					</div>
 					<div class="col-md-7">

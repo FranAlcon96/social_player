@@ -30,7 +30,7 @@
                                             @else
                                             <p class="card-text">{{ $grupo->descripcion }}</p>
                                             @endif
-                                            <a href="{{ route('grupo',[$grupo->id]) }}">Ir a la página del grupo.</a>
+                                            <a href="{{ route('grupo',[$grupo->id,auth()->user()->id]) }}">Ir a la página del grupo.</a>
                                         </div>
                                     </div>
                                 </div>

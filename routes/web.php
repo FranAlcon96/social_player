@@ -13,9 +13,10 @@ Route::get('/show/{id}','JuegoController@show')->name('juego');
 
 Route::get('/listaGrupos','GrupoController@index')->name('grupos');
 Route::get('/crearGrupo','GrupoController@create')->name('crearGrupo');
-Route::get('/grupo/show/{id}','GrupoController@show')->name('grupo');
+Route::get('/grupo/show/{id}/{id_usuario}','GrupoController@show')->name('grupo');
 Route::post('/crearGrupo/{id_usuario}','GrupoController@store')->name('storeGrupo');
 Route::get('/grupo/membresia/{id_juego}/{id_usuario}','GrupoController@membresia')->name('membresia');
+Route::get('/grupo/abandonar/{id_juego}/{id_usuario}','GrupoController@abandonar')->name('membresiaAbandonar');
 
 Route::post('/opiniones/store/{id_juego}/{id_usuario}','OpinionController@store')->name('crearOpinion');
 
