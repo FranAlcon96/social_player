@@ -88,7 +88,13 @@ class GrupoController extends Controller
         ->where('miembro_grupo.id_grupo','=',$id)
         ->get();
 
-        return view('comunidad.grupo',compact('grupo','count','miembros'));
+        $comentarios = DB::table('mensaje')
+        ->join('usuario', 'mensaje.id_usuario', '=', 'usuario.id')
+        ->select('usuario.usuario','mensaje.texto','mensaje.created_at')
+        ->where('mensaje.id_grupo','=',$id)
+        ->paginate(5);
+
+        return view('comunidad.grupo',compact('grupo','count','miembros','comentarios'));
     }
 
     /**

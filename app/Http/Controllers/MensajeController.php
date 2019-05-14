@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Juego;
-use App\Opinion;
-use DB;
-use Carbon\Carbon;
 
-class JuegoController extends Controller
+use Illuminate\Http\Request;
+use App\Mensaje;
+
+class MensajeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,7 @@ class JuegoController extends Controller
      */
     public function index()
     {
-        $juegos = Juego::nombre(request()->get('nombre'))->paginate(7);
-        return view('comunidad.listaJuegos', compact('juegos'));
+        //
     }
 
     /**
@@ -36,9 +33,13 @@ class JuegoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id_grupo,$id_usuario)
     {
-        //
+        $mensaje =  Mensaje::create([
+            'id_grupo' => $id_grupo,
+            'id_usuario' => $id_usuario,
+            'texto' => request('texto'),
+        ]);
     }
 
     /**
@@ -49,13 +50,7 @@ class JuegoController extends Controller
      */
     public function show($id)
     {
-        $juego = Juego::find($id);
-        $opiniones = DB::table('opinion')
-        ->where('id_juego','=',$id)
-        ->join('usuario', 'opinion.id_usuario', '=', 'usuario.id')
-        ->select('opinion.titulo', 'opinion.texto', 'opinion.puntuacion', 'opinion.created_at', 'opinion.updated_at', 'usuario.usuario')
-        ->paginate(5);
-        return view('comunidad.juego', compact('juego','opiniones'));
+        //
     }
 
     /**
@@ -91,5 +86,4 @@ class JuegoController extends Controller
     {
         //
     }
-
 }

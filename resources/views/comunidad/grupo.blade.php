@@ -48,28 +48,46 @@
                             <div class="panel panel-default widget cajita-opinion">
                                 <div class="panel-body">
                                     <ul class="list-group">
+                                    	@foreach($comentarios as $comentario)
                                         <li class="list-group-item mb-3">
                                             <div class="row">
                                                 <div class="col-xs-10 col-md-11">
                                                     <div>
-                                                        <h3>ejemplo</h3>
                                                         <div class="mic-info">
-                                                            <h5>Publicado por buda</h5>
+                                                            <h5>Publicado por {{ $comentario->usuario }}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="comment-text">
-                                                        <p class="texto-opinion">sfdgbddgdgdgdgdgdgdgd   egdgdgdgdg xdddddd d d d d d</p>
-                                                        <span>Puntuación: tré</span>
+                                                        <p class="texto-opinion">{{ $comentario->texto }}</p>
+														<?php $date = Carbon\Carbon::parse($comentario->created_at);?>
+                                                        <span>Publicado {{ $date->diffForHumans() }}</span>
+                                                        <a href="#" class="m-3"><i class="far fa-thumbs-up"></i></a>
+                                                        <a href="#"><i class="far fa-thumbs-down"></i></i></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
+                                        @endforeach
                                     </ul>
 								</div>
 							</div>
 						</div>
 					</div>
 			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 bg-dark">
+			<h3 class="text-light text-center mt-3 mb-3">Haz un comentario</h3>
+			<form method="post" action="{{ route('crearMensaje',[$grupo->id,auth()->user()->id]) }}">
+				@csrf
+				<textarea rows="5" placeholder="Escriba un comentario..." class="form-control col-md-6 offset-md-3 mb-4" name="texto"></textarea>
+				<div class="text-center">
+					<button type="submit" class="btn btn-primary mb-3">Enviar</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

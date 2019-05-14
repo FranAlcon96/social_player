@@ -18,6 +18,8 @@ Route::post('/crearGrupo/{id_usuario}','GrupoController@store')->name('storeGrup
 Route::get('/grupo/membresia/{id_juego}/{id_usuario}','GrupoController@membresia')->name('membresia');
 Route::get('/grupo/abandonar/{id_juego}/{id_usuario}','GrupoController@abandonar')->name('membresiaAbandonar');
 
+Route::post('/mensajes/store/{id_grupo}/{id_usuario}','MensajeController@store')->name('crearMensaje');
+
 Route::post('/opiniones/store/{id_juego}/{id_usuario}','OpinionController@store')->name('crearOpinion');
 
 Route::get('/sesion', function () {
