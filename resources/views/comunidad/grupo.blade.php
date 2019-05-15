@@ -61,8 +61,10 @@
                                                         <p class="texto-opinion">{{ $comentario->texto }}</p>
 														<?php $date = Carbon\Carbon::parse($comentario->created_at);?>
                                                         <span>Publicado {{ $date->diffForHumans() }}</span>
-                                                        <a href="#" class="m-3"><i class="far fa-thumbs-up"></i></a>
-                                                        <a href="#"><i class="far fa-thumbs-down"></i></i></a>
+                                                        <div>
+                                                        	<a href="#" class="btn btn-primary"><i class="far fa-thumbs-up"></i> Me gusta</a>
+                                                        	<a href="#" class="btn btn-primary"><i class="far fa-thumbs-down"></i> No me gusta</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

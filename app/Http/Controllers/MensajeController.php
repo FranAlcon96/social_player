@@ -40,6 +40,8 @@ class MensajeController extends Controller
             'id_usuario' => $id_usuario,
             'texto' => request('texto'),
         ]);
+
+        return redirect(route('grupo',[$id_grupo,$id_usuario]));
     }
 
     /**
