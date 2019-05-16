@@ -14,7 +14,7 @@
                   <a class="dropdown-item" href="{{ route('juegos') }}">Juegos</a>
                   <a class="dropdown-item" href="{{ route('grupos') }}">Grupos</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Mis publicaciones</a>
+                  <a class="dropdown-item" href="{{ route('gestionOpiniones') }}">Mis publicaciones</a>
                 </div>
               </li>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Opinion;
 use App\Juego;
+use Illuminate\Support\Facades\Auth;
 use DB;
 
 class OpinionController extends Controller
@@ -16,7 +17,8 @@ class OpinionController extends Controller
      */
     public function index()
     {
-        //
+        $opiniones = Opinion::where('id_usuario','=',Auth::id())->paginate();
+        return view('comunidad.gestorOpiniones',compact('opiniones'));
     }
 
     /**
@@ -89,7 +91,8 @@ class OpinionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $opinion = Opinion::find($id);
+        return view('comunidad.editOpinion',compact('opinion'));
     }
 
     /**
@@ -101,7 +104,19 @@ class OpinionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $opinion = Opinion::find($id);
+        request()->validate([
+            'titulo' => 'required',
+            'puntuacion' => 'required|max:10|min:1',
+            'texto' => 'required|min:10'
+        ]);
+
+        $opinion->titulo = request('titulo');
+        $opinion->puntuacion = request('puntuacion');
+        $opinion->texto = request('texto');
+        $opinion->save();
+
+        return redirect(route('gestionOpiniones'));
     }
 
     /**
@@ -112,6 +127,7 @@ class OpinionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroy = Opinion::destroy($id);
+        return back();
     }
 }

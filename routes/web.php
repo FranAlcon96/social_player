@@ -34,3 +34,8 @@ Route::get('mensajes/{id}/like', 'MensajeController@like')->name('mensajes.like'
 Route::get('mensajes/{id}/unlike', 'MensajeController@unlike')->name('mensajes.unlike');
 Route::get('mensajes/{id}/dislike', 'MensajeController@dislike')->name('mensajes.dislike');
 Route::get('mensajes/{id}/undislike', 'MensajeController@undislike')->name('mensajes.undislike');
+
+Route::get('/gestionOpiniones','OpinionController@index')->name('gestionOpiniones');
+Route::get('/eliminarOpinion/{id}','OpinionController@destroy')->name('eliminarOpinion');
+Route::get('/editarOpinion/{id}','OpinionController@edit')->name('editarOpinion');
+Route::post('/updateOpinion/{id}','OpinionController@update')->name('updateOpinion');

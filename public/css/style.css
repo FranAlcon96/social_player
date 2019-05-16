@@ -319,6 +319,12 @@ body{
   border-radius:50%;
 }
 
+/* Estilo de gestión de publicaciones */
+
+.gestion-opiniones-container{
+min-height: 650px;
+}
+
 /* Estilo de formularios */
 .contenedor-form-login{
 	margin: 0 auto;
@@ -458,5 +464,3 @@ background-color: #1c382e;
 font-size: 30px;
 }
 
-
-/* canal interesante: https://www.youtube.com/user/rimorsoft/videos*/
