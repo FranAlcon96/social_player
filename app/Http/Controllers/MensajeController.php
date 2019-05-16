@@ -40,7 +40,6 @@ class MensajeController extends Controller
             'id_usuario' => $id_usuario,
             'texto' => request('texto'),
         ]);
-
         return redirect(route('grupo',[$id_grupo,$id_usuario]));
     }
 
@@ -88,4 +87,37 @@ class MensajeController extends Controller
     {
         //
     }
+
+public function like($id)
+    {
+        $post = Mensaje::find($id);
+        $post->like();
+
+        return back();
+    }
+
+public function unlike($id)
+    {
+        $post = Mensaje::find($id);
+        $post->unlike();
+
+        return back();
+    }
+
+public function dislike($id)
+    {
+        $post = Mensaje::find($id);
+        $post->dislike();
+
+        return back();
+    }
+
+public function undislike($id)
+    {
+        $post = Mensaje::find($id);
+        $post->undislike();
+
+        return back();
+    }
+
 }

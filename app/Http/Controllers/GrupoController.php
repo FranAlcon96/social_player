@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Grupo;
 use App\Juego;
 use App\MiembroGrupo;
+use App\Mensaje;
+use App\User;
 use DB;
 
 class GrupoController extends Controller
@@ -88,12 +90,7 @@ class GrupoController extends Controller
         ->where('miembro_grupo.id_grupo','=',$id)
         ->get();
 
-        $comentarios = DB::table('mensaje')
-        ->join('usuario', 'mensaje.id_usuario', '=', 'usuario.id')
-        ->select('usuario.usuario','mensaje.texto','mensaje.created_at')
-        ->where('mensaje.id_grupo','=',$id)
-        ->paginate(5);
-
+        $comentarios = Mensaje::with('usuario')->where('id_grupo','=',$id)->paginate(4);
         return view('comunidad.grupo',compact('grupo','count','miembros','comentarios'));
     }
 

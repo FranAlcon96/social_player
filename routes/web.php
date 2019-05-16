@@ -29,3 +29,8 @@ Route::get('/sesion', function () {
 Route::post('login','UserController@login')->name('login');
 Route::post('registro','UserController@store')->name('registro');
 Route::post('logout','UserController@logout')->name('logout');
+
+Route::get('mensajes/{id}/like', 'MensajeController@like')->name('mensajes.like');
+Route::get('mensajes/{id}/unlike', 'MensajeController@unlike')->name('mensajes.unlike');
+Route::get('mensajes/{id}/dislike', 'MensajeController@dislike')->name('mensajes.dislike');
+Route::get('mensajes/{id}/undislike', 'MensajeController@undislike')->name('mensajes.undislike');

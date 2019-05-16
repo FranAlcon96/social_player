@@ -18,7 +18,7 @@
 							@if($count==0)
 							<a href="{{ route('membresia',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Unirse al grupo</a>
 							@else
-							<a href="{{ route('membresiaAbandonar',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Abanadonar grupo</a>
+							<a href="{{ route('membresiaAbandonar',[$grupo->id,auth()->user()->id]) }}" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Abanadonar grupo</a>
 							@endif
 						</div>
 					</div>
@@ -48,13 +48,13 @@
                             <div class="panel panel-default widget cajita-opinion">
                                 <div class="panel-body">
                                     <ul class="list-group">
-                                    	@foreach($comentarios as $comentario)
+                                    	@forelse($comentarios as $comentario)
                                         <li class="list-group-item mb-3">
                                             <div class="row">
                                                 <div class="col-xs-10 col-md-11">
                                                     <div>
                                                         <div class="mic-info">
-                                                            <h5>Publicado por {{ $comentario->usuario }}</h5>
+                                                            <h5>Publicado por {{ $comentario->usuario->usuario }}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="comment-text">
@@ -62,14 +62,25 @@
 														<?php $date = Carbon\Carbon::parse($comentario->created_at);?>
                                                         <span>Publicado {{ $date->diffForHumans() }}</span>
                                                         <div>
-                                                        	<a href="#" class="btn btn-primary"><i class="far fa-thumbs-up"></i> Me gusta</a>
-                                                        	<a href="#" class="btn btn-primary"><i class="far fa-thumbs-down"></i> No me gusta</a>
+                                                        	@if (!$comentario->liked)
+                                                        	<a href="{{ route('mensajes.like', $comentario->id) }}" class="btn btn-primary"><i class="far fa-thumbs-up"></i> Me gusta ({{ $comentario->likesCount }})</a>
+                                                        	@else
+                                                        	<a href="{{ route('mensajes.unlike', $comentario->id) }}" class="btn btn-danger"><i class="far fa-thumbs-up"></i> Quitar me gusta ({{ $comentario->likesCount }})</a>
+                                                        	@endif
+                                                        	@if (!$comentario->disliked)
+                                                        	<a href="{{ route('mensajes.dislike',$comentario->id) }}" class="btn btn-primary"><i class="far fa-thumbs-down"></i> No me gusta ({{ $comentario->dislikesCount }})</a>
+                                                        	@else
+															<a href="{{ route('mensajes.undislike',$comentario->id) }}" class="btn btn-danger"><i class="far fa-thumbs-down"></i>Quitar no me gusta ({{ $comentario->dislikesCount }})</a>
+                                                        	@endif
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-                                        @endforeach
+                                        @empty
+                                        <h5 class="text-light text-center">No hay ná</p>
+                                        @endforelse
+                                        {{ $comentarios->links() }}
                                     </ul>
 								</div>
 							</div>
