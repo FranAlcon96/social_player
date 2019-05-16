@@ -85,7 +85,8 @@ class MensajeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Mensaje::destroy($id);
+        return back();
     }
 
 public function like($id)

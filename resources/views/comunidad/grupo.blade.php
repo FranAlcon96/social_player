@@ -73,6 +73,11 @@
 															<a href="{{ route('mensajes.undislike',$comentario->id) }}" class="btn btn-danger"><i class="far fa-thumbs-down"></i>Quitar no me gusta ({{ $comentario->dislikesCount }})</a>
                                                         	@endif
                                                         </div>
+														@if (auth()->user()->id === $comentario->id_usuario)
+                                                        <div class="mt-2">
+                                                        	<a href="{{ route('eliminarComentario',$comentario->id) }}">Eliminar comentario</a>
+                                                        </div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
