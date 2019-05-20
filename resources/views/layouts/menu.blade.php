@@ -25,9 +25,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('listarTorneos') }}">Torneos</a>
                   <a class="dropdown-item" href="{{ route('crearTorneo') }}">Crear torneo</a>
-                  <a class="dropdown-item" href="#">Gestionar torneos</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Mis equipos</a>
+                  <a class="dropdown-item" href="#">Equipos</a>
                   <a class="dropdown-item" href="#">Crear equipo</a>
                 </div>
               </li>

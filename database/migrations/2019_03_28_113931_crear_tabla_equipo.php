@@ -18,7 +18,6 @@ class CrearTablaEquipo extends Migration
             $table->bigInteger('victorias');
             $table->bigInteger('derrotas');
             $table->string('icono');
-            $table->string('honor');
             $table->timestamps();
 
         });
