@@ -16,7 +16,11 @@ class TorneoController extends Controller
      */
     public function index()
     {
-        //
+        $juegos = Juego::all()->sortBy("nombre");
+        $torneos = Torneo::with('usuario')
+                   ->with('juego')
+                   ->paginate(10);
+        return view('competitivo.listaTorneos',compact('juegos','torneos'));
     }
 
     /**
@@ -56,7 +60,7 @@ class TorneoController extends Controller
             'finalizado' => 0
         ]);
 
-        return redirect(route('index'));
+        return redirect(route('listaTorneos'));
     }
 
     /**

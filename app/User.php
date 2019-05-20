@@ -42,4 +42,8 @@ class User extends Authenticatable
         return $this->hasMany(Mensaje::class);
     }
 
+     public function torneos() {
+        return $this->hasMany(Torneo::class);
+    }
+
 }
