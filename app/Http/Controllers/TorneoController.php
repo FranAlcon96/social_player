@@ -60,7 +60,7 @@ class TorneoController extends Controller
             'finalizado' => 0
         ]);
 
-        return redirect(route('listaTorneos'));
+        return redirect(route('listarTorneos'));
     }
 
     /**

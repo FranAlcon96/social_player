@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaParticipa extends Migration
+class CrearTablaRonda extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,16 @@ class CrearTablaParticipa extends Migration
      */
     public function up()
     {
-        Schema::create('participa', function (Blueprint $table) {
+        Schema::create('ronda', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_equipo')->unsigned();
+            $table->bigInteger('id_equipo_local')->unsigned();
+            $table->bigInteger('id_equipo_visitante')->unsigned();
             $table->bigInteger('id_torneo')->unsigned();
-            $table->foreign('id_equipo')->references('id')->on('equipo');
+            $table->bigInteger('ganador');
+            $table->bigInteger('perdedor');
+            $table->Integer('empate')->nullable();
+            $table->foreign('id_equipo_local')->references('id')->on('equipo');
+            $table->foreign('id_equipo_visitante')->references('id')->on('equipo');
             $table->foreign('id_torneo')->references('id')->on('torneo');
             $table->timestamps();
         });
@@ -30,8 +35,6 @@ class CrearTablaParticipa extends Migration
      */
     public function down()
     {
-        Schema::table('participa', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('ronda');
     }
 }

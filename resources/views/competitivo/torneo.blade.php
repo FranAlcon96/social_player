@@ -63,7 +63,15 @@
 	<div class="row">
 		<div class="col-12 bg-dark">
 			<h3 class="text-light text-center mt-3 mb-3">Gestionar el torneo</h3>
-
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="text-light text-center">
+							<span class="text-light text-center">Equipo 1 vs Equipo 2</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
