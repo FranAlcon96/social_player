@@ -27,7 +27,7 @@
 							<span class="text-light mt-2 mb-3"> | </span>
 							<span class="text-light mt-2 mb-3">Torneo creado por: {{ $i->usuario->usuario }}</span>
 							<span class="text-light mt-2 mb-3"> | </span>
-							<a href="#">Ver página<a/>
+							<a href="{{ route('torneo',[$i->id]) }}">Ver página<a/>
 							<hr class="style-four">
 						@endforeach
 						{{ $torneos->links() }}

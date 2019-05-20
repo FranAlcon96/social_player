@@ -71,7 +71,10 @@ class TorneoController extends Controller
      */
     public function show($id)
     {
-        //
+            $torneo = Torneo::with('usuario')
+                   ->with('juego')
+                   ->find($id);
+        return view('competitivo.torneo',compact('torneo'));
     }
 
     /**

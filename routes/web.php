@@ -44,3 +44,4 @@ Route::post('/updateOpinion/{id}','OpinionController@update')->name('updateOpini
 Route::get('/listarTorneos','TorneoController@index')->name('listarTorneos');
 Route::get('/crearTorneo','TorneoController@create')->name('crearTorneo');
 Route::post('/crearTorneo','TorneoController@store')->name('storeTorneo');
+Route::get('/torneo/{id}','TorneoController@show')->name('torneo');
