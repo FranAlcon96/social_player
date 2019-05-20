@@ -17,7 +17,7 @@ class CrearTablaParticipa extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_equipo')->unsigned();
             $table->bigInteger('id_torneo')->unsigned();
-            $table->foreign('id_equipo')->references('id')->on('equipo');
+            $table->foreign('id_equipo')->references('id')->on('usuario');
             $table->foreign('id_torneo')->references('id')->on('torneo');
             $table->timestamps();
         });
