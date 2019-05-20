@@ -40,3 +40,6 @@ Route::get('/gestionOpiniones','OpinionController@index')->name('gestionOpinione
 Route::get('/eliminarOpinion/{id}','OpinionController@destroy')->name('eliminarOpinion');
 Route::get('/editarOpinion/{id}','OpinionController@edit')->name('editarOpinion');
 Route::post('/updateOpinion/{id}','OpinionController@update')->name('updateOpinion');
+
+Route::get('/crearTorneo','TorneoController@create')->name('crearTorneo');
+Route::post('/crearTorneo','TorneoController@store')->name('storeTorneo');

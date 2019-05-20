@@ -14,7 +14,7 @@
                   <a class="dropdown-item" href="{{ route('juegos') }}">Juegos</a>
                   <a class="dropdown-item" href="{{ route('grupos') }}">Grupos</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{{ route('gestionOpiniones') }}">Mis publicaciones</a>
+                  <a class="dropdown-item" href="{{ route('gestionOpiniones') }}">Gestionar opiniones</a>
                 </div>
               </li>
 
@@ -23,11 +23,12 @@
                   Competitivo
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Buscar torneo por juego</a>
-                  <a class="dropdown-item" href="#">Crear torneo</a>
+                  <a class="dropdown-item" href="#">Torneos</a>
+                  <a class="dropdown-item" href="{{ route('crearTorneo') }}">Crear torneo</a>
+                  <a class="dropdown-item" href="#">Gestionar torneos</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Mis torneos</a>
-                  <a class="dropdown-item" href="#">Mis Equipos</a>
+                  <a class="dropdown-item" href="#">Mis equipos</a>
+                  <a class="dropdown-item" href="#">Crear equipo</a>
                 </div>
               </li>
 

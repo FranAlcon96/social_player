@@ -16,11 +16,16 @@ class CrearTablaTorneo extends Migration
         Schema::create('torneo', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_juego')->unsigned();
+            $table->bigInteger('id_creador')->unsigned();
+            $table->string('nombre');
             $table->Integer('equipos');
-            $table->Integer('rondas');
-            $table->foreign('id_juego')->references('id')->on('juego');
+            $table->Integer('inscripcion_cerrada');
+            $table->Integer('finalizado');
+            $table->string('imagen');
+            $table->longText('texto');
             $table->timestamps();
-            //
+            $table->foreign('id_juego')->references('id')->on('juego');
+            $table->foreign('id_creador')->references('id')->on('usuario');
         });
     }
 

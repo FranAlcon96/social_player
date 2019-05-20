@@ -14,10 +14,12 @@ class CrearTablaParticipa extends Migration
     public function up()
     {
         Schema::create('participa', function (Blueprint $table) {
-            $table->bigInteger('id_juego');
-            $table->bigInteger('id_torneo');
-            $table->boolean('estado');  
-            $table->primary(array('id_juego', 'id_torneo'));          
+            $table->bigInteger('id_equipo')->unsigned();
+            $table->bigInteger('id_torneo')->unsigned();
+            $table->Integer('estado');
+            $table->primary(array('id_equipo', 'id_torneo'));
+            $table->foreign('id_equipo')->references('id')->on('equipo');
+            $table->foreign('id_torneo')->references('id')->on('torneo');
         });
     }
 
