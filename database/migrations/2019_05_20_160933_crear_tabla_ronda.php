@@ -18,11 +18,11 @@ class CrearTablaRonda extends Migration
             $table->bigInteger('id_equipo_local')->unsigned();
             $table->bigInteger('id_equipo_visitante')->unsigned();
             $table->bigInteger('id_torneo')->unsigned();
-            $table->bigInteger('ganador');
-            $table->bigInteger('perdedor');
+            $table->bigInteger('ganador')->nullable();
+            $table->bigInteger('perdedor')->nullable();
             $table->Integer('empate')->nullable();
-            $table->foreign('id_equipo_local')->references('id')->on('usuario');
-            $table->foreign('id_equipo_visitante')->references('id')->on('usuario');
+            $table->foreign('id_equipo_local')->references('id')->on('equipo');
+            $table->foreign('id_equipo_visitante')->references('id')->on('equipo');
             $table->foreign('id_torneo')->references('id')->on('torneo');
             $table->timestamps();
         });
