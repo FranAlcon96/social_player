@@ -23,6 +23,9 @@
                   Competitivo
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('crearEquipo') }}">Crear equipo</a>
+                  <a class="dropdown-item" href="{{ route('listarTorneos') }}">Administrar Equipos</a>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ route('listarTorneos') }}">Torneos</a>
                   <a class="dropdown-item" href="{{ route('crearTorneo') }}">Crear torneo</a>
                 </div>

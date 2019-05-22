@@ -45,3 +45,7 @@ Route::get('/listarTorneos','TorneoController@index')->name('listarTorneos');
 Route::get('/crearTorneo','TorneoController@create')->name('crearTorneo');
 Route::post('/crearTorneo','TorneoController@store')->name('storeTorneo');
 Route::get('/torneo/{id}','TorneoController@show')->name('torneo');
+
+Route::get('/listaEquipos','EquipoController@index')->name('listaEquipos');
+Route::get('/crearEquipo','EquipoController@create')->name('crearEquipo');
+Route::post('/storeEquipo','EquipoController@store')->name('storeEquipo');

@@ -15,6 +15,14 @@ class CrearTablaEquipo extends Migration
     {
         Schema::create('equipo', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->string('logo');
+            $table->integer('miembros');
+            $table->bigInteger('id_usuario')->unsigned();
+            $table->bigInteger('id_juego')->unsigned();
+            $table->foreign('id_usuario')->references('id')->on('usuario');
+            $table->foreign('id_juego')->references('id')->on('juego');
             $table->timestamps();
         });
     }
