@@ -22,10 +22,9 @@ Route::post('/mensajes/store/{id_grupo}/{id_usuario}','MensajeController@store')
 
 Route::post('/opiniones/store/{id_juego}/{id_usuario}','OpinionController@store')->name('crearOpinion');
 
-Route::get('/sesion', function () {
-    return view('users.login');
-})->name('sesion')->middleware('guest'); //he tocado el middleware
-
+Route::get('/sesion','UserController@create')->name('sesion')->middleware('guest');
+Route::get('/editUser/{id}','UserController@edit')->name('editUser');
+Route::post('/updateUser/{id}','UserController@update')->name('updateUser');
 Route::post('login','UserController@login')->name('login');
 Route::post('registro','UserController@store')->name('registro');
 Route::post('logout','UserController@logout')->name('logout');

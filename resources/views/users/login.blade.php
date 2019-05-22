@@ -45,9 +45,19 @@
 					<div class="form-group">
 						<input type="text" class="input-completo" id="a" name="usuario" placeholder="Nombre de usuario">
 					</div>
+					<div class="form-group">
+						<select class="form-control input-completo" name="juego_favorito">
+							@foreach ($juegos as $juego)
+								<option value="{{ $juego->nombre }}">{{ $juego->nombre }}</option>
+							@endforeach
+						</select>
+					</div>
 					<div class="form-inline">
 						<input type="password" class="input-medio" id="b" name="password" placeholder="Contraseña">
 						<input type="password" class="input-medio" id="input-password-confirm" name="password-confirm" placeholder="Confirme su contraseña">
+					</div>
+					<div class="form-group">
+						<input type="file" name="imagen" class="form-control input-completo">
 					</div>
 					<button type="submit" class="btn btn-primary enviar"><i class="fas fa-archive"></i> Registro</button>
 					<div class="col-12 registrar-link toggle">

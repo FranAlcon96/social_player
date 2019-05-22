@@ -5,6 +5,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use App\Juego;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -26,7 +27,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $juegos = Juego::orderBy('nombre')->get();
+        return view('users.login',compact('juegos'));
     }
 
     /**
@@ -45,10 +47,10 @@ class UserController extends Controller
             'email' => 'required',
             'usuario' => 'required',
             'password' => 'required',
-            'password-confirm' => 'required'
+            'juego_favorito' => 'required',
+            'password-confirm' => 'required',
+            'imagen' => 'required'
         ]);
-        /*$datos['password'] = Hash::make($datosValidados['password']);
-        $usuario = User::create($datos);*/
          $usuario =  User::create([
             'nombre' => $data['nombre'],
             'apellidos' => $data['apellidos'],
@@ -56,10 +58,9 @@ class UserController extends Controller
             'email' => $data['email'],
             'usuario' => $data['usuario'],
             'password' => Hash::make($data['password']),
-            'juego_favorito' => 'League of Legends', //Cambiar más adelante cuando se añada los juegos
-
+            'juego_favorito' => $data['juego_favorito'],
+            'imagen' => $data['imagen']
         ]);
-        //faltaría lo de confirmar el registro con el correo.
         return redirect('/')->with('success', 'Usuario registrado correctamente.');
     }
 
@@ -86,7 +87,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $juegos = Juego::orderBy('nombre')->get();
+        return view('users.editUser',compact('user','juegos'));
     }
 
     /**
@@ -98,7 +101,23 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $data = request()->validate([
+            'nombre' => 'required',
+            'apellidos' => 'required',
+            'edad' => 'required',
+            'email' => 'required',
+            'usuario' => 'required',
+            'juego_favorito' => 'required',
+        ]);
+        $user->nombre = $data['nombre'];
+        $user->apellidos = $data['apellidos'];
+        $user->edad = $data['edad'];
+        $user->email = $data['email'];
+        $user->usuario = $data['usuario'];
+        $user->juego_favorito = $data['juego_favorito'];
+        $user->save();
+        return redirect(route('perfil',[$id]));
     }
 
     /**

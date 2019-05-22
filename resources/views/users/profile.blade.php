@@ -37,6 +37,11 @@
 								<td>{{ $user->juego_favorito }}</td>
 							</tr>
 						</table>
+						@if ($user->id == auth()->user()->id)
+							<div class="float-right">
+								<a href="{{ route('editUser',[$user->id]) }}"><i class="fas fa-user-cog"></i> Editar perfil</a>
+							</div>
+						@endif
 					</div>
 				</div>
 			</div>
@@ -49,7 +54,6 @@
 			<h3 class="text-light text-center mt-3 mb-3">Actividad en la red</h3>
 			<div class=" col-md-6 offset-md-3 text-center text-light actividad-perfil mb-3">
 				<span>Grupos fundados: </span><br>
-
 				<span>Opiones aportadas a la comunidad: {{ $count_opiniones }}</span><br>
 				<span>Torneos en los que participa o ha participado: {{ $count_opiniones }}</span><br>
 				<span>Comentarios publicados: {{ $count_mensajes }}</span><br>
