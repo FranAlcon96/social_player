@@ -14,9 +14,9 @@ class EquipoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $equipos = Equipo::all()->where('id_usuario','=',$id);
+        $equipos = Equipo::all()->where('id_usuario','=',Auth::user()->id);
         return view('competitivo.listaEquipos',compact('equipos'));
     }
 
@@ -69,7 +69,8 @@ class EquipoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $equipo = Equipo::find($id);
+        return view('competitivo.editEquipo',compact('equipo'));
     }
 
     /**
