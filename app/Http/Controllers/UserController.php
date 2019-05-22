@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -70,7 +71,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        $count_opiniones = DB::table('opinion')->where('id_usuario','=',$id)->count();
+        $count_mensajes = DB::table('mensaje')->where('id_usuario','=',$id)->count();
+        $count_torneos = DB::table('participa')->where('id_equipo','=',$id)->count();
+        return view('users.profile',compact('user','count_opiniones','count_mensajes','count_torneos'));
     }
 
     /**

@@ -48,7 +48,7 @@
                   <i class="fas fa-user-ninja"></i> {{ auth()->user()->usuario }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Mi Perfil</a>
+                  <a class="dropdown-item" href="{{ route('perfil',[auth()->user()->id]) }}">Mi Perfil</a>
                   <form action="{{ route('logout') }}" method="post" id="logout-form">
                     @csrf
                   <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()">Logout</a>

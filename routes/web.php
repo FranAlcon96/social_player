@@ -29,6 +29,7 @@ Route::get('/sesion', function () {
 Route::post('login','UserController@login')->name('login');
 Route::post('registro','UserController@store')->name('registro');
 Route::post('logout','UserController@logout')->name('logout');
+Route::get('perfil/{id}','UserController@show')->name('perfil');
 
 Route::get('mensajes/{id}/like', 'MensajeController@like')->name('mensajes.like');
 Route::get('mensajes/{id}/unlike', 'MensajeController@unlike')->name('mensajes.unlike');

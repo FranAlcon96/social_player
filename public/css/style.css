@@ -131,6 +131,23 @@ body{
 	font-size: 18px;
 }
 
+/* Estilo del perfil de usuario */
+
+.img-user{
+  width: 400px;
+  height:350px;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.actividad-perfil span{
+  font-size: 20px;
+}
+
+.tabla-perfil{
+  font-size: 20px;
+}
+
 /* Estilo de la pantalla de listado de juegos */
 .list-juegos-section{
 	min-height: 650px;
