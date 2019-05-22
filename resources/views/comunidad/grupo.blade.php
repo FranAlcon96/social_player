@@ -54,7 +54,7 @@
                                                 <div class="col-xs-10 col-md-11">
                                                     <div>
                                                         <div class="mic-info">
-                                                            <h5>Publicado por {{ $comentario->usuario->usuario }}</h5>
+                                                            <h5>Publicado por <a href="{{ route('perfil',[$comentario->usuario->id]) }}">{{ $comentario->usuario->usuario }}</a></h5>
                                                         </div>
                                                     </div>
                                                     <div class="comment-text">

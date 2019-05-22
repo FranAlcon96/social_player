@@ -53,7 +53,7 @@ class JuegoController extends Controller
         $opiniones = DB::table('opinion')
         ->where('id_juego','=',$id)
         ->join('usuario', 'opinion.id_usuario', '=', 'usuario.id')
-        ->select('opinion.titulo', 'opinion.texto', 'opinion.puntuacion', 'opinion.created_at', 'opinion.updated_at', 'usuario.usuario')
+        ->select('opinion.titulo', 'opinion.texto', 'opinion.puntuacion', 'opinion.created_at', 'opinion.updated_at', 'usuario.usuario','usuario.id as id_usuario')
         ->paginate(5);
         return view('comunidad.juego', compact('juego','opiniones'));
     }

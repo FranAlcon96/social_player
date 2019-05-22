@@ -65,7 +65,7 @@
                                                                     @endif
                                                                     {{ $opinion->titulo }}</h3>
                                                                 <div class="mic-info">
-                                                                    <h5>Publicado por <a href="#">{{ $opinion->usuario }}</a>
+                                                                    <h5>Publicado por <a href="{{ route('perfil',[$opinion->id_usuario]) }}">{{ $opinion->usuario }}</a>
                                                                     <?php $date = Carbon\Carbon::parse($opinion->created_at);?>
                                                                      <small>{{  $date->diffForHumans()}}</small></h5>
                                                                 </div>
