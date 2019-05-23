@@ -47,7 +47,7 @@ class EquipoController extends Controller
             'logo' => request('logo'),
             'miembros' => 0
         ]);
-        return redirect()->route('grupos');
+        return redirect()->route('competitivo.listaEquipos');
     }
 
     /**
@@ -58,7 +58,8 @@ class EquipoController extends Controller
      */
     public function show($id)
     {
-        //
+        $equipo = Equipo::find($id);
+        return view('competitivo.showEquipo',compact('equipo'));
     }
 
     /**
@@ -93,6 +94,7 @@ class EquipoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Equipo::destroy($id);
+        return back();
     }
 }
