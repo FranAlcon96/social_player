@@ -23,7 +23,7 @@
 								<td>{{ $equipo->created_at }}</td>
 								<td class="text-center">
 									<a href="{{ route('showEquipo',[$equipo->id]) }}"><button class="btn btn-primary m-1"><i class="fas fa-eye"></i></button></a>
-									<a href="{{ route('editarEquipo',[$equipo->nombre]) }}"><button class="btn btn-success m-1"><i class="fas fa-edit"></i></button></a>
+									<a href="{{ route('editarEquipo',[$equipo->id]) }}"><button class="btn btn-success m-1"><i class="fas fa-edit"></i></button></a>
 									<a href="{{ route('deleteEquipo',[$equipo->id]) }}"><button class="btn btn-danger m-1"><i class="fas fa-trash-alt"></i></button></a>
 								</td>
 							</tr>

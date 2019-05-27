@@ -47,7 +47,7 @@ class EquipoController extends Controller
             'logo' => request('logo'),
             'miembros' => 0
         ]);
-        return redirect()->route('competitivo.listaEquipos');
+        return redirect()->route('listaEquipos');
     }
 
     /**
