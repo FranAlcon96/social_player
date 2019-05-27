@@ -82,7 +82,7 @@ $(document).ready(function(){
 	        success: function (response) {
 	        	$('#usuarios').empty();
 	        	for (var i = 0; i < response.length; i++) {
-	        		$("<li><a href='#'>"+response[i].usuario+"</a></li>").appendTo($('#usuarios'));
+	        		$("<li><a href='/social_player/public/enviarSolicitud/{{ $equipo->id }}/"+response[i].id+"'>"+response[i].usuario+"</a></li>").appendTo($('#usuarios'));
 	        		}
 	        	}
 	    	});

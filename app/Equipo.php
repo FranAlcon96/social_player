@@ -18,4 +18,9 @@ class Equipo extends Model
 	  {
 	    return $this->belongsTo(Juego::class,'id_juego');
 	  }
+
+	  public function solicitud() {
+        return $this->hasOne(Solicitud::class);
+    }
+
 }

@@ -50,14 +50,22 @@
 </div>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-12 bg-dark">
-			<h3 class="text-light text-center mt-3 mb-3">Actividad en la red</h3>
-			<div class=" col-md-6 offset-md-3 text-center text-light actividad-perfil mb-3">
-				<span>Grupos fundados: </span><br>
-				<span>Opiones aportadas a la comunidad: {{ $count_opiniones }}</span><br>
-				<span>Torneos en los que participa o ha participado: {{ $count_opiniones }}</span><br>
-				<span>Comentarios publicados: {{ $count_mensajes }}</span><br>
+		<div class="col-sm-6 bg-dark text-center">
+			<h3 class="text-light mt-3 mb-3">Solicitudes pendientes</h3>
+			@forelse ($solicitudes as $s)
+			<div>
+				<span class="text-light">Solicitud de unión al equipo ejemplo:</span>
+				<a href="{{ route('aceptarSolicitud',[$s->id]) }}"><button class="btn btn-primary m-1"><i class="fas fa-check"></i></button></a>
+				<a href="#"><button class="btn btn-danger m-1"><i class="fas fa-times"></i></button></a>
 			</div>
+			@empty
+			<p class="text-light">No hay solicitudes pendientes</p>
+			@endforelse
+		</div>
+		<div class="col-sm-6 bg-dark actividad-perfil text-center p-3">
+				<h3 class="text-light mt-3 mb-3">Tu actividad</h3>
+				<span class="text-light">Opiniones publicadas: {{ $count_opiniones }}</span><br>
+				<span class="text-light">Comentarios publicados: {{ $count_mensajes }}</span><br>
 		</div>
 	</div>
 </div>

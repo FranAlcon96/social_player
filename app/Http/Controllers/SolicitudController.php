@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Equipo;
-use App\Juego;
-use App\User;
-use Auth;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+use App\Solicitud;
 
-class EquipoController extends Controller
+class SolicitudController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +15,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        $equipos = Equipo::all()->where('id_usuario','=',Auth::user()->id);
-        return view('competitivo.listaEquipos',compact('equipos'));
+
     }
 
     /**
@@ -29,8 +25,7 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        $juegos = Juego::orderBy('nombre')->get();
-        return view('competitivo.crearEquipo',compact('juegos'));
+        //
     }
 
     /**
@@ -39,17 +34,14 @@ class EquipoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id_equipo)
     {
-        $equipo =  Equipo::create([
-            'id_usuario' => Auth::user()->id,
-            'id_juego' => request('id_juego'),
-            'descripcion' => request('descripcion'),
-            'nombre' => request('nombre'),
-            'logo' => request('logo'),
-            'miembros' => 0
-        ]);
-        return redirect()->route('listaEquipos');
+        $solicitud = new Solicitud;
+        $solicitud->id_usuario = Auth::user()->id;
+        $solicitud->id_equipo = $id_equipo;
+        $solicitud->estado = 'pendiente';
+        $solicitud->save();
+        return redirect(route('showEquipo',[$id_equipo]));
     }
 
     /**
@@ -60,9 +52,7 @@ class EquipoController extends Controller
      */
     public function show($id)
     {
-        $equipo = Equipo::find($id);
-        $users = User::paginate(6);
-        return view('competitivo.showEquipo',compact('equipo','users'));
+        //
     }
 
     /**
@@ -73,8 +63,7 @@ class EquipoController extends Controller
      */
     public function edit($id)
     {
-        $equipo = Equipo::find($id);
-        return view('competitivo.editEquipo',compact('equipo'));
+        //
     }
 
     /**
@@ -97,13 +86,24 @@ class EquipoController extends Controller
      */
     public function destroy($id)
     {
-        Equipo::destroy($id);
+        //
+    }
+
+    public function aceptarSolicitud(Request $request, $id)
+    {
+        $solicitud = Solicitud::find($id);
+        $solicitud->estado = 'aceptada';
+        $solicitud->save();
         return back();
     }
 
-    public function filtroUsuarios($filtro)
+    public function rechazarSolicitud(Request $request, $id)
     {
-        $users = User::where('usuario', 'LIKE', "%{$filtro}%")->get();
-        return json_encode($users);
+        $solicitud = Solicitud::find($id);
+        $solicitud->estado = 'rechazada';
+        $solicitud->save();
+        return back();
     }
+
+
 }

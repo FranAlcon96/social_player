@@ -53,3 +53,6 @@ Route::post('/storeEquipo','EquipoController@store')->name('storeEquipo');
 Route::get('/editarEquipo/{id}','EquipoController@edit')->name('editarEquipo');
 Route::get('/deleteEquipo/{id}','EquipoController@destroy')->name('deleteEquipo');
 Route::get('/filtroUsuarios/{filtro?}','EquipoController@filtroUsuarios')->name('filtroUsuarios');
+
+Route::get('/enviarSolicitud/{id_equipo}/{id_usuario}','SolicitudController@store')->name('enviarSolicitud');
+Route::get('/aceptarSolicitud/{id}','SolicitudController@aceptarSolicitud')->name('aceptarSolicitud');
