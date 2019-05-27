@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Juego;
 use App\Equipo;
+use App\Juego;
+use App\User;
 use Auth;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class EquipoController extends Controller
 {
@@ -59,7 +61,8 @@ class EquipoController extends Controller
     public function show($id)
     {
         $equipo = Equipo::find($id);
-        return view('competitivo.showEquipo',compact('equipo'));
+        $users = User::paginate(6);
+        return view('competitivo.showEquipo',compact('equipo','users'));
     }
 
     /**
@@ -96,5 +99,12 @@ class EquipoController extends Controller
     {
         Equipo::destroy($id);
         return back();
+    }
+
+    public function filtroUsuarios($filtro)
+    {
+        $users = User::where('usuario', 'LIKE', "%{$filtro}%")->get();
+        return json_encode($users);
+        //return $users->toJson(JSON_PRETTY_PRINT);
     }
 }

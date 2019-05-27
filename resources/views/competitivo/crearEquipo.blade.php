@@ -23,7 +23,7 @@
 					<div class="form-group">
 						<input type="file" class="form-control" name="logo" placeholder="Sube una imagen">
 					</div>
-					<button type="submit" class="btn btn-primary enviar">Crear Equipo</button>
+					<button type="submit" class="btn btn-primary enviar">Crear</button>
 				</form>
 			</div>
 		</div>

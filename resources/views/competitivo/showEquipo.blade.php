@@ -32,6 +32,8 @@
 						<div>
 							<h3 class="text-center text-light">Descripción</h3>
 							<p class="text-light">{{ $equipo->descripcion }}</p>
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button>
 						</div>
 					</div>
 				</div>
@@ -39,4 +41,53 @@
 		</div>
 	</div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-light" id="exampleModalLabel">Añadir miembros a {{ $equipo->nombre }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<input type="text" name="busqueda" id="busqueda" class="form-control mb-3" placeholder="Buscar usuario">
+		<ul class="lista-usuarios-membresia text-center" id="usuarios">
+		</ul>
+		{{ $users->links() }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+@section('scripts')
+<script type="text/javascript">
+$(document).ready(function(){
+
+   $("#busqueda").keyup(function(){
+   		filtrado($("#busqueda").val());
+	});
+
+   function filtrado(filtro){
+	var url = `/social_player/public/filtroUsuarios/${filtro}`;
+	if ($("#busqueda").val().length>8) {
+	    $.ajax({
+	        url: url,
+	        type: 'get',
+	        dataType: 'json',
+	        success: function (response) {
+	        	$('#usuarios').empty();
+	        	for (var i = 0; i < response.length; i++) {
+	        		$("<li><a href='#'>"+response[i].usuario+"</a></li>").appendTo($('#usuarios'));
+	        		}
+	        	}
+	    	});
+		}
+	}
+});
+</script>
 @endsection

@@ -52,3 +52,4 @@ Route::get('/crearEquipo','EquipoController@create')->name('crearEquipo');
 Route::post('/storeEquipo','EquipoController@store')->name('storeEquipo');
 Route::get('/editarEquipo/{id}','EquipoController@edit')->name('editarEquipo');
 Route::get('/deleteEquipo/{id}','EquipoController@destroy')->name('deleteEquipo');
+Route::get('/filtroUsuarios/{filtro?}','EquipoController@filtroUsuarios')->name('filtroUsuarios');
