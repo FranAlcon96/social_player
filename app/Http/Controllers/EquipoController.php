@@ -61,7 +61,7 @@ class EquipoController extends Controller
     public function show($id)
     {
         $equipo = Equipo::find($id);
-        $users = User::paginate(6);
+        $users = User::all();
         return view('competitivo.showEquipo',compact('equipo','users'));
     }
 

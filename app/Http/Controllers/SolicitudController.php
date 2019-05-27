@@ -34,10 +34,17 @@ class SolicitudController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id_equipo)
+    public function store(Request $request, $id_equipo,$id_usuario)
     {
+        $comprobar = Solicitud::where('id_equipo','=',$id_equipo)
+            ->where('id_usuario','=',$id_usuario)
+            ->where('estado','!=','rechazada')
+            ->count();
+        if ($comprobar!=0) {
+            return "error, el usuario ya tiene una solicitud";
+        }
         $solicitud = new Solicitud;
-        $solicitud->id_usuario = Auth::user()->id;
+        $solicitud->id_usuario = $id_usuario;
         $solicitud->id_equipo = $id_equipo;
         $solicitud->estado = 'pendiente';
         $solicitud->save();

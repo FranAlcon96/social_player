@@ -33,7 +33,9 @@
 							<h3 class="text-center text-light">Descripción</h3>
 							<p class="text-light">{{ $equipo->descripcion }}</p>
 							<!-- Button trigger modal -->
+							@if ($equipo->id_usuario == Auth()->user()->id)
 							<button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">Buscar Miembros</button>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -55,7 +57,6 @@
       	<input type="text" name="busqueda" id="busqueda" class="form-control mb-3" placeholder="Buscar usuario">
 		<ul class="lista-usuarios-membresia text-center" id="usuarios">
 		</ul>
-		{{ $users->links() }}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
