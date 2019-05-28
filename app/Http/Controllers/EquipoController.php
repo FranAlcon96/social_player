@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Equipo;
 use App\Juego;
 use App\User;
+use App\Solicitud;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -49,6 +50,13 @@ class EquipoController extends Controller
             'logo' => request('logo'),
             'miembros' => 0
         ]);
+
+        $solicitud = new Solicitud;
+        $solicitud->id_usuario = Auth::user()->id;
+        $solicitud->id_equipo = $equipo->id;
+        $solicitud->estado = 'aceptada';
+        $solicitud->save();
+
         return redirect()->route('listaEquipos');
     }
 

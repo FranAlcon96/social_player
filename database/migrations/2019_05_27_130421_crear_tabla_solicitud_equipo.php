@@ -19,7 +19,7 @@ class CrearTablaSolicitudEquipo extends Migration
             $table->bigInteger('id_equipo')->unsigned();
             $table->string('estado');
             $table->foreign('id_usuario')->references('id')->on('usuario');
-            $table->foreign('id_equipo')->references('id')->on('equipo');
+            $table->foreign('id_equipo')->references('id')->on('equipo')->onDelete('cascade');
             $table->timestamps();
         });
     }

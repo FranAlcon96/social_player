@@ -43,6 +43,7 @@ class SolicitudController extends Controller
         if ($comprobar!=0) {
             return "error, el usuario ya tiene una solicitud";
         }
+
         $solicitud = new Solicitud;
         $solicitud->id_usuario = $id_usuario;
         $solicitud->id_equipo = $id_equipo;
