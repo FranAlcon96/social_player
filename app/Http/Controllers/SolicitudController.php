@@ -8,6 +8,10 @@ use App\Solicitud;
 
 class SolicitudController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('comprobarSesion');
+    }
     /**
      * Display a listing of the resource.
      *

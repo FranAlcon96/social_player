@@ -7,6 +7,10 @@ use App\Mensaje;
 
 class MensajeController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('comprobarSesion');
+    }
     /**
      * Display a listing of the resource.
      *

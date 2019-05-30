@@ -4,15 +4,11 @@
 	<div class="row">
 		<div class="col-md-2 bg-dark">
 			<h3 class="text-light text-center mb-3 mt-3">Buscar torneo</h3>
-			<form method="get" class="form">
 				<select class="form-control" name="id_juego">
 					@foreach ($juegos as $juego)
 						<option value="{{ $juego->id }}">{{ $juego->nombre }}</option>
 					@endforeach
 				</select>
-				<center><button type="submit" class="btn btn-primary mt-3">
-					<i class="fas fa-search"></i> Buscar</button></center>
-			</form>
 		</div>
 		<div class="col-md-10 list-juegos-section bg-dark">
 			<div class="container">

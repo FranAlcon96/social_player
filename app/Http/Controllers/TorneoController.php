@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class TorneoController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('comprobarSesion');
+    }
     /**
      * Display a listing of the resource.
      *
