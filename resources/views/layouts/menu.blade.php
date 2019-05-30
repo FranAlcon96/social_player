@@ -30,10 +30,6 @@
                   <a class="dropdown-item" href="{{ route('crearTorneo') }}">Crear torneo</a>
                 </div>
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Acerca de</a>
               </li>
