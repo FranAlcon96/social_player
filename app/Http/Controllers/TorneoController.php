@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Juego;
 use App\Torneo;
+use App\Equipo;
+use App\Participa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -75,10 +77,12 @@ class TorneoController extends Controller
      */
     public function show($id)
     {
+            $participantes = Participa::where('id_torneo','=',$id)->get();
+            $equipos = Equipo::where('id_usuario','=',Auth::user()->id)->get();
             $torneo = Torneo::with('usuario')
                    ->with('juego')
                    ->find($id);
-        return view('competitivo.torneo',compact('torneo'));
+        return view('competitivo.torneo',compact('torneo','equipos','participantes'));
     }
 
     /**
@@ -113,5 +117,26 @@ class TorneoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function agregarParticipante($id_torneo){
+        $comprobar = Participa::where('id_equipo','=',request('id_equipo'))
+            ->where('id_torneo','=',$id_torneo)
+            ->count();
+
+        if ($comprobar!=0) {
+            return "este equipo ya participa en el torneo";
+        }
+
+        Participa::create([
+            'id_equipo' => request('id_equipo'),
+            'id_torneo' => $id_torneo
+        ]);
+
+        $torneo = Torneo::find(request('id_equipo'));
+        $aux = $torneo->equipos + 1;
+        $torneo->equipos = $aux;
+        $torneo->save();
+        return back();
     }
 }

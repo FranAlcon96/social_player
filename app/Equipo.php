@@ -23,4 +23,8 @@ class Equipo extends Model
         return $this->hasOne(Solicitud::class);
     }
 
+    public function participa() {
+        return $this->hasOne(Participa::class);
+    }
+
 }

@@ -49,8 +49,30 @@
 						<div class="text-light tabla-torneo">
 							<p>{{ $torneo->texto }}</p>
 						</div>
-						<div class="text-center">
-							<a href="#" class="btn btn-primary">Inscríbete</a>
+						<div class="text-light tabla-torneo">
+							<h5>Participantes en el equipo: </h5>
+							<ul class="list-unstyled text-center">
+							@forelse ($participantes as $participacion)
+								<li><a href="#">{{ $participacion->equipo->nombre }}</a></li>
+							@empty
+							<li>No hay equipos inscritos en el torneo.</li>
+							@endforelse
+							</ul>
+						</div>
+						<div class="text-center mb-3">
+							<h5 class="text-light">Inscribe a tu equipo en el torneo</h5>
+							@forelse ($equipos as $equipo)
+							<form method="post" action="{{ route('agregarParticipante',[$torneo->id]) }}">
+								@csrf
+								<select name="id_equipo">
+									<option value="{{ $equipo->id }}">{{ $equipo->nombre }}</option>
+								</select>
+								<input type="submit" class="btn btn-primary ml-3" value="Inscribir">
+							</form>
+							@empty
+							<p class="text-light">No hay equipos.</p>
+							<small class="text-light">Nota: Para unirse a un torneo debe ser el creador del equipo.</small>
+							@endforelse
 						</div>
 					</div>
 				</div>
@@ -58,22 +80,4 @@
 		</div>
 	</div>
 </div>
-@if($torneo->usuario->id == Auth()->user()->id)
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-12 bg-dark">
-			<h3 class="text-light text-center mt-3 mb-3">Gestionar el torneo</h3>
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="text-light text-center">
-							<span class="text-light text-center">Equipo 1 vs Equipo 2</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-@endif
 @endsection

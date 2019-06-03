@@ -56,3 +56,4 @@ Route::get('/filtroUsuarios/{filtro?}','EquipoController@filtroUsuarios')->name(
 
 Route::get('/enviarSolicitud/{id_equipo}/{id_usuario}','SolicitudController@store')->name('enviarSolicitud');
 Route::get('/aceptarSolicitud/{id}','SolicitudController@aceptarSolicitud')->name('aceptarSolicitud');
+Route::post('/agregarParticipante/{id_torneo}','TorneoController@agregarParticipante')->name('agregarParticipante');
