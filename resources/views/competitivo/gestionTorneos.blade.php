@@ -30,7 +30,7 @@
 								<td>Finalizado</td>
 								@endif
 								<td class="text-center">
-									<a href="{{ route('torneo',[$torneo->id]) }}"><button class="btn btn-warning m-1"><i class="fas fa-gamepad"></i></button></a>
+									<a href="{{ route('administrarTorneo',[$torneo->id]) }}"><button class="btn btn-warning m-1"><i class="fas fa-gamepad"></i></button></a>
 									<a href="{{ route('torneo',[$torneo->id]) }}"><button class="btn btn-primary m-1"><i class="fas fa-eye"></i></button></a>
 									<a href="{{ route('editarTorneo',[$torneo->id]) }}"><button class="btn btn-success m-1"><i class="fas fa-edit"></i></button></a>
 									<a href="{{ route('eliminarTorneo',[$torneo->id]) }}"><button class="btn btn-danger m-1"><i class="fas fa-trash-alt"></i></button></a>

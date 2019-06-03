@@ -90,6 +90,11 @@ class TorneoController extends Controller
         return view('competitivo.gestionTorneos',compact('torneos'));
     }
 
+    public function administrarTorneo($id){
+        $torneo = Torneo::find($id);
+        return view('competitivo.statusPanel',compact('torneo'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
