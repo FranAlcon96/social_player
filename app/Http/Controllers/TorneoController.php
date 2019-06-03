@@ -85,6 +85,11 @@ class TorneoController extends Controller
         return view('competitivo.torneo',compact('torneo','equipos','participantes'));
     }
 
+    public function listarTorneos(){
+        $torneos = Torneo::where('id_creador','=',Auth::user()->id)->paginate(10);
+        return view('competitivo.gestionTorneos',compact('torneos'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -93,7 +98,8 @@ class TorneoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $torneo = Torneo::find($id);
+        return view('competitivo.editTorneo',compact('torneo'));
     }
 
     /**
@@ -105,7 +111,15 @@ class TorneoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $torneo = Torneo::find($id);
+        $data = request()->validate([
+            'nombre' => 'required',
+            'texto' => 'required',
+        ]);
+        $torneo->nombre = $data['nombre'];
+        $torneo->texto = $data['texto'];
+        $torneo->save();
+        return redirect(route('gestionTorneos',[$id]));
     }
 
     /**
@@ -116,7 +130,8 @@ class TorneoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Torneo::destroy($id);
+        return back();
     }
 
     public function agregarParticipante($id_torneo){

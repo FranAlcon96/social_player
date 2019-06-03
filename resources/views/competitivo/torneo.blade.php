@@ -33,8 +33,12 @@
 							  <td>{{ $torneo->juego->nombre }}</td>
 						    </tr>
 						    <tr>
-						    	<th>Equipos</th>
-						    	<td>{{ $torneo->equipos }}</td>
+						    	<th>Inscripción</th>
+						    	@if($torneo->inscripcion_cerrada==0)
+						    	<td>Abierta</td>
+						    	@else
+						    	<td>Cerrada</td>
+						    	@endif
 						    </tr>
 						    <tr>
 						    	<th>Estado</th>
@@ -59,6 +63,7 @@
 							@endforelse
 							</ul>
 						</div>
+						@if($torneo->finalizado===0)
 						<div class="text-center mb-3">
 							<h5 class="text-light">Inscribe a tu equipo en el torneo</h5>
 							@forelse ($equipos as $equipo)
@@ -74,6 +79,7 @@
 							<small class="text-light">Nota: Para unirse a un torneo debe ser el creador del equipo.</small>
 							@endforelse
 						</div>
+						@endif
 					</div>
 				</div>
 			</div>

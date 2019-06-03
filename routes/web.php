@@ -44,7 +44,11 @@ Route::post('/updateOpinion/{id}','OpinionController@update')->name('updateOpini
 Route::get('/listarTorneos','TorneoController@index')->name('listarTorneos');
 Route::get('/crearTorneo','TorneoController@create')->name('crearTorneo');
 Route::post('/crearTorneo','TorneoController@store')->name('storeTorneo');
+Route::get('/editarTorneo/{id}','TorneoController@edit')->name('editarTorneo');
+Route::post('/updateTorneo/{id}','TorneoController@update')->name('updateTorneo');
+Route::post('/eliminarTorneo/{id}','TorneoController@destroy')->name('eliminarTorneo');
 Route::get('/torneo/{id}','TorneoController@show')->name('torneo');
+Route::get('/gestionTorneos','TorneoController@listarTorneos')->name('gestionTorneos');
 
 Route::get('/listaEquipos','EquipoController@index')->name('listaEquipos');
 Route::get('/showEquipo/{id}','EquipoController@show')->name('showEquipo');

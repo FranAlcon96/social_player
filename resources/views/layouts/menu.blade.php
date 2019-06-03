@@ -28,6 +28,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ route('listarTorneos') }}">Torneos</a>
                   <a class="dropdown-item" href="{{ route('crearTorneo') }}">Crear torneo</a>
+                  <a class="dropdown-item" href="{{ route('gestionTorneos') }}">Gestionar torneos</a>
                 </div>
               </li>
               <li class="nav-item">

@@ -97,7 +97,15 @@ class EquipoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $equipo = Equipo::find($id);
+        $data = request()->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+        $equipo->nombre = $data['nombre'];
+        $equipo->descripcion = $data['texto'];
+        $equipo->save();
+        return redirect(route('listaEquipos'));
     }
 
     /**
