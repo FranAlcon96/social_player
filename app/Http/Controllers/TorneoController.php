@@ -133,10 +133,6 @@ class TorneoController extends Controller
             'id_torneo' => $id_torneo
         ]);
 
-        $torneo = Torneo::find(request('id_equipo'));
-        $aux = $torneo->equipos + 1;
-        $torneo->equipos = $aux;
-        $torneo->save();
         return back();
     }
 }

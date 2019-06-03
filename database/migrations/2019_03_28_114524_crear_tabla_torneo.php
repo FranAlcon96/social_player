@@ -18,7 +18,6 @@ class CrearTablaTorneo extends Migration
             $table->bigInteger('id_juego')->unsigned();
             $table->bigInteger('id_creador')->unsigned();
             $table->string('nombre');
-            $table->Integer('equipos');
             $table->Integer('inscripcion_cerrada');
             $table->Integer('finalizado');
             $table->string('imagen');
