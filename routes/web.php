@@ -50,6 +50,7 @@ Route::post('/eliminarTorneo/{id}','TorneoController@destroy')->name('eliminarTo
 Route::get('/torneo/{id}','TorneoController@show')->name('torneo');
 Route::get('/gestionTorneos','TorneoController@listarTorneos')->name('gestionTorneos');
 Route::get('/administrarTorneo/{id}','TorneoController@administrarTorneo')->name('administrarTorneo');
+Route::post('/hacerRonda/{id}','TorneoController@crearRonda')->name('hacerRonda');
 
 Route::get('/listaEquipos','EquipoController@index')->name('listaEquipos');
 Route::get('/showEquipo/{id}','EquipoController@show')->name('showEquipo');

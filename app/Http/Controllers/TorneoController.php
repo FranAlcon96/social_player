@@ -6,6 +6,7 @@ use App\Juego;
 use App\Torneo;
 use App\Equipo;
 use App\Participa;
+use App\Ronda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -92,7 +93,37 @@ class TorneoController extends Controller
 
     public function administrarTorneo($id){
         $torneo = Torneo::find($id);
-        return view('competitivo.statusPanel',compact('torneo'));
+        $participantes = Participa::where('id_torneo','=',$id)->get();
+        $rondas_pendientes = Ronda::where('id_torneo','=',$id)
+            ->where('ganador','=',0)
+            ->where('perdedor','=',0)
+            ->where('empate','=',0)
+            ->get();
+
+        $rondas = Ronda::where('id_torneo','=',$id)
+            ->orWhere('ganador','!=',0)
+            ->orWhere('perdedor','!=',0)
+            ->orWhere('empate','!=',0)
+            ->get();
+
+        return view('competitivo.statusPanel',compact('torneo','participantes','rondas_pendientes','rondas'));
+    }
+
+    public function crearRonda($id_torneo){
+
+        if (request('id_equipo_local') === request('id_equipo_visitante')) {
+            return "Los equipos han de ser diferentes";
+        }
+
+        Ronda::create([
+            'id_equipo_local' => request('id_equipo_local'),
+            'id_equipo_visitante' => request('id_equipo_visitante'),
+            'ganador' => 0,
+            'ganador' => 0,
+            'empate' => 0,
+            'id_torneo' => $id_torneo,
+        ]);
+        return back();
     }
 
     /**
@@ -155,4 +186,6 @@ class TorneoController extends Controller
 
         return back();
     }
+
+
 }

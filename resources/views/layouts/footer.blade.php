@@ -1,8 +1,8 @@
     <div class="container-fluid text-center text-md-left">
       <div class="row">
         <div class="col-md-6 mt-md-0 mt-3">
-          <h5 class="text-uppercase">El protagonista eres tú.</h5>
-          <p>Social player es una plataforma realizada por y para el disfrute de toda persona que ame el mundo de los videojuegos, y se encuentra totalmente abierta a sugerencias para poder mejorar cada día.</p>
+          <h5 class="text-uppercase">Proyecto integrado 2º DAM</h5>
+          <p>Social player es una plataforma realizada como proyecto integrado para el grado superior de Desarrollo de aplicaciones multiplataforma, en el I.E.S Almunia.</p>
         </div>
         <hr class="clearfix w-100 d-md-none pb-3">
         <div class="col-md-3 mb-md-0 mb-3 text-center">

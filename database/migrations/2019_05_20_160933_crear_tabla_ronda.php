@@ -21,9 +21,9 @@ class CrearTablaRonda extends Migration
             $table->bigInteger('ganador')->nullable();
             $table->bigInteger('perdedor')->nullable();
             $table->Integer('empate')->nullable();
-            $table->foreign('id_equipo_local')->references('id')->on('equipo');
-            $table->foreign('id_equipo_visitante')->references('id')->on('equipo');
-            $table->foreign('id_torneo')->references('id')->on('torneo');
+            $table->foreign('id_equipo_local')->references('id')->on('equipo')->onDelete('cascade');
+            $table->foreign('id_equipo_visitante')->references('id')->on('equipo')->onDelete('cascade');
+            $table->foreign('id_torneo')->references('id')->on('torneo')->onDelete('cascade');
             $table->timestamps();
         });
     }

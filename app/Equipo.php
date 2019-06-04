@@ -27,4 +27,8 @@ class Equipo extends Model
         return $this->hasOne(Participa::class);
     }
 
+    public function ronda() {
+        return $this->hasOne(Ronda::class);
+    }
+
 }

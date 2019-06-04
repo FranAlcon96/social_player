@@ -65,19 +65,18 @@
 						</div>
 						@if($torneo->finalizado===0)
 						<div class="text-center mb-3">
-							<h5 class="text-light">Inscribe a tu equipo en el torneo</h5>
-							@forelse ($equipos as $equipo)
 							<form method="post" action="{{ route('agregarParticipante',[$torneo->id]) }}">
 								@csrf
 								<select name="id_equipo">
+									@forelse ($equipos as $equipo)
 									<option value="{{ $equipo->id }}">{{ $equipo->nombre }}</option>
+									@empty
+									<p class="text-light">No hay equipos.</p>
+									<small class="text-light">Nota: Para unirse a un torneo debe ser el creador del equipo.</small>
+									@endforelse
 								</select>
 								<input type="submit" class="btn btn-primary ml-3" value="Inscribir">
 							</form>
-							@empty
-							<p class="text-light">No hay equipos.</p>
-							<small class="text-light">Nota: Para unirse a un torneo debe ser el creador del equipo.</small>
-							@endforelse
 						</div>
 						@endif
 					</div>
