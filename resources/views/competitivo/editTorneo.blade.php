@@ -13,6 +13,12 @@
 					<div class="form-group mt-3">
 						<textarea name="texto" class="form-control" rows="5" placeholder="Escriba algo...">{{ $torneo->texto }}</textarea>
 					</div>
+					<div class="form-group mt-3">
+						<select name="inscripcion_cerrada" class="form-control">
+							<option value="0">Inscripción Abierta</option>
+							<option value="1">Inscripción Cerrada</option>
+						</select>
+					</div>
 					<button type="submit" class="btn btn-primary enviar">Editar</button>
 				</form>
 			</div>

@@ -44,9 +44,11 @@
 						<ul class="list-unstyled text-light text-center">
 							@forelse ($rondas_pendientes as $p)
 								<li class="mt-3">{{ $p->equipo_local->nombre }} vs. {{ $p->equipo_visitante->nombre }}</li>
-								<a href="#" class="btn btn-primary m-2" title="Gana {{ $p->equipo_local->nombre }}"><i class="fas fa-trophy"></i></a>
+								<a href="{{ route('ganarRondaLocal',[$p->id]) }}" class="btn btn-primary m-2" title="Gana {{ $p->equipo_local->nombre }}"><i class="fas fa-trophy"></i></a>
 								-
-								<a href="#" class="btn btn-primary m-2" title="Gana {{ $p->equipo_visitante->nombre }}"><i class="fas fa-trophy"></i></a>
+								<a href="{{ route('ganarRondaVisitante',[$p->id]) }}" class="btn btn-primary m-2" title="Gana {{ $p->equipo_visitante->nombre }}"><i class="fas fa-trophy"></i></a>
+								-
+								<a href="{{ route('deleteRonda',[$p->id]) }}" class="btn btn-danger m-2" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
 							@empty
 								<li class="mt-3">No hay rondas pendientes.</li>
 							@endforelse
@@ -61,11 +63,11 @@
 						<ul class="list-unstyled text-light text-center">
 							@forelse ($rondas as $r)
 								@if ($r->ganador === 1 && $r->perdedor === 0 && $r->empate === 0)
-								<li class="mt-3">Ganador: {{ $r->equipo_local->nombre }} | Perdedor: {{ $r->equipo_visitante->nombre }}</li>
+								<li class="mt-3">Ganador: {{ $r->equipo_local->nombre }} | Perdedor: {{ $r->equipo_visitante->nombre }} <a href="{{ route('deleteRonda',[$r->id]) }}"><i class="fas fa-trash-alt"></i></a> </li>
 								@elseif ($r->ganador === 0 && $r->perdedor === 1 && $r->empate === 0)
-								<li class="mt-3">Ganador: {{ $r->equipo_visitante->nombre }} | Perdedor: {{ $r->equipo_local->nombre }}</li>
+								<li class="mt-3">Ganador: {{ $r->equipo_visitante->nombre }} | Perdedor: {{ $r->equipo_local->nombre }} <a href="{{ route('deleteRonda',[$r->id]) }}"><i class="fas fa-trash-alt"></i></a> </li>
 								@elseif ($r->ganador === 0 && $r->perdedor === 0 && $r->empate === 1)
-								<li class="mt-3">Empate: {{ $r->equipo_visitante->nombre }} | {{ $r->equipo_local->nombre }}</li>
+								<li class="mt-3">Empate: {{ $r->equipo_visitante->nombre }} | {{ $r->equipo_local->nombre }} <a href="{{ route('deleteRonda',[$r->id]) }}"><i class="fas fa-trash-alt"></i></a> </li>
 								@endif
 							@empty
 								<li class="mt-3">No hay rondas pendientes.</li>

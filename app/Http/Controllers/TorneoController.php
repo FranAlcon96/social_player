@@ -119,7 +119,7 @@ class TorneoController extends Controller
             'id_equipo_local' => request('id_equipo_local'),
             'id_equipo_visitante' => request('id_equipo_visitante'),
             'ganador' => 0,
-            'ganador' => 0,
+            'perdedor' => 0,
             'empate' => 0,
             'id_torneo' => $id_torneo,
         ]);
@@ -151,9 +151,11 @@ class TorneoController extends Controller
         $data = request()->validate([
             'nombre' => 'required',
             'texto' => 'required',
+            'inscripcion_cerrada' => 'required',
         ]);
         $torneo->nombre = $data['nombre'];
         $torneo->texto = $data['texto'];
+        $torneo->inscripcion_cerrada = $data['inscripcion_cerrada'];
         $torneo->save();
         return redirect(route('gestionTorneos',[$id]));
     }
@@ -187,5 +189,23 @@ class TorneoController extends Controller
         return back();
     }
 
+    public function deleteRonda($id){
+        Ronda::destroy($id);
+        return back();
+    }
+
+    public function ganarRondaLocal($id){
+         $ronda = Ronda::find($id);
+         $ronda->ganador = 1;
+         $ronda->save();
+         return back();
+    }
+
+    public function ganarRondaVisitante($id){
+         $ronda = Ronda::find($id);
+         $ronda->perdedor = 1;
+         $ronda->save();
+         return back();
+    }
 
 }

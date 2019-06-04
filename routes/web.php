@@ -51,6 +51,9 @@ Route::get('/torneo/{id}','TorneoController@show')->name('torneo');
 Route::get('/gestionTorneos','TorneoController@listarTorneos')->name('gestionTorneos');
 Route::get('/administrarTorneo/{id}','TorneoController@administrarTorneo')->name('administrarTorneo');
 Route::post('/hacerRonda/{id}','TorneoController@crearRonda')->name('hacerRonda');
+Route::get('/deleteRonda/{id}','TorneoController@deleteRonda')->name('deleteRonda');
+Route::get('/ganaLocal/{id}','TorneoController@ganarRondaLocal')->name('ganarRondaLocal');
+Route::get('/ganaVisitante/{id}','TorneoController@ganarRondaVisitante')->name('ganarRondaVisitante');
 
 Route::get('/listaEquipos','EquipoController@index')->name('listaEquipos');
 Route::get('/showEquipo/{id}','EquipoController@show')->name('showEquipo');
