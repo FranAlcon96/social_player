@@ -9,6 +9,7 @@ use App\MiembroGrupo;
 use App\Mensaje;
 use App\User;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class GrupoController extends Controller
 {
@@ -62,8 +63,15 @@ class GrupoController extends Controller
             'id_juego' => request('id_juego'),
             'descripcion' => request('descripcion'),
             'nombre' => request('nombre'),
-            'miembros' => 0
+            'miembros' => 0,
+            'imagen' => 'img/game_default.jpg'
         ]);
+
+        if ($request->hasFile('imagen')) {
+            $path = Storage::disk('public')->put('img',$request->file('imagen'));
+            $grupo->imagen = $path;
+            $grupo->save();
+        }
 
         return redirect()->route('grupos');
     }

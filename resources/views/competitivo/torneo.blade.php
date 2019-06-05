@@ -6,7 +6,7 @@
 			<h1 class="text-light text-center mt-3 mb-3"><i class="fas fa-trophy"></i> {{ $torneo->nombre }}</h1>
 			<h5 class="text-light text-center mt-3 mb-3">Torneo creado por: {{ $torneo->usuario->usuario }}</h5>
 			<div class="img-torneo">
-				<img src="../img/background.jpg" class="img-fluid">
+				<img src="../{{ $torneo->imagen }}" class="img-fluid">
 			</div>
 		</div>
 	</div>

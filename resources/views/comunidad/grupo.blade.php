@@ -7,7 +7,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5 mb-3 img-grupo">
-						<img class="img-fluid" src="../../../img/background.jpg">
+						<img class="img-fluid" src="../../../{{ $grupo->imagen }}">
 					</div>
 					<div class="col-md-7">
 						<h4 class="text-light mt-3 mb-3">Grupo de {{ $grupo->titulo }}</h4>

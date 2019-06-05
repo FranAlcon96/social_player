@@ -4,7 +4,7 @@
 	<div class="modal-dialog text-center formulario">
 		<div class="col-sm-8 contenedor-form-login">
 			<div class="modal-content">
-				<form class="col-12" method="POST" class="formulario-grupo" action="{{ route('storeEquipo') }}">
+				<form class="col-12" method="POST" class="formulario-grupo" action="{{ route('storeEquipo') }}" enctype="multipart/form-data">
 					@csrf
 					<h4 class="text-light mt-3">Crea tu equipo</h4>
 					<div class="form-group mt-3">

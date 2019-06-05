@@ -60,6 +60,7 @@ Route::get('/showEquipo/{id}','EquipoController@show')->name('showEquipo');
 Route::get('/crearEquipo','EquipoController@create')->name('crearEquipo');
 Route::post('/storeEquipo','EquipoController@store')->name('storeEquipo');
 Route::get('/editarEquipo/{id}','EquipoController@edit')->name('editarEquipo');
+Route::post('/updateEquipo/{id}','EquipoController@update')->name('updateEquipo');
 Route::get('/deleteEquipo/{id}','EquipoController@destroy')->name('deleteEquipo');
 Route::get('/filtroUsuarios/{filtro?}','EquipoController@filtroUsuarios')->name('filtroUsuarios');
 

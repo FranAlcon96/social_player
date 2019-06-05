@@ -9,7 +9,6 @@ use App\Juego;
 use App\Solicitud;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 {

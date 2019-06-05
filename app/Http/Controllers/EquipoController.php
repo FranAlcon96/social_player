@@ -9,6 +9,7 @@ use App\Solicitud;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class EquipoController extends Controller
 {
@@ -50,9 +51,15 @@ class EquipoController extends Controller
             'id_juego' => request('id_juego'),
             'descripcion' => request('descripcion'),
             'nombre' => request('nombre'),
-            'logo' => request('logo'),
-            'miembros' => 0
+            'miembros' => 0,
+            'logo' => 'img/game_default.jpg'
         ]);
+
+        if ($request->hasFile('logo')) {
+            $path = Storage::disk('public')->put('img',$request->file('logo'));
+            $equipo->logo = $path;
+            $equipo->save();
+        }
 
         $solicitud = new Solicitud;
         $solicitud->id_usuario = Auth::user()->id;
@@ -101,9 +108,14 @@ class EquipoController extends Controller
         $data = request()->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
+            'logo' => 'image'
         ]);
         $equipo->nombre = $data['nombre'];
-        $equipo->descripcion = $data['texto'];
+        $equipo->descripcion = $data['descripcion'];
+        if ($request->hasFile('logo')) {
+            $path = Storage::disk('public')->put('img',$request->file('logo'));
+            $equipo->logo = $path;
+        }
         $equipo->save();
         return redirect(route('listaEquipos'));
     }

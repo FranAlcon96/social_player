@@ -9,6 +9,7 @@ use App\Participa;
 use App\Ronda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class TorneoController extends Controller
 {
@@ -53,7 +54,8 @@ class TorneoController extends Controller
             'id_juego' => 'required',
             'imagen' => 'required',
             'texto' => 'required',
-            'nombre' => 'required'
+            'nombre' => 'required',
+            'imagen' => 'image|max:1999'
         ]);
 
         $torneo =  Torneo::create([
@@ -64,8 +66,15 @@ class TorneoController extends Controller
             'imagen' => request('imagen'),
             'equipos' => 0,
             'inscripcion_cerrada' => 0,
-            'finalizado' => 0
+            'finalizado' => 0,
+            'imagen' => 'img/game_default.jpg'
         ]);
+
+        if ($request->hasFile('imagen')) {
+            $path = Storage::disk('public')->put('img',$request->file('imagen'));
+            $torneo->imagen = $path;
+            $torneo->save();
+        }
 
         return redirect(route('listarTorneos'));
     }
@@ -152,10 +161,15 @@ class TorneoController extends Controller
             'nombre' => 'required',
             'texto' => 'required',
             'inscripcion_cerrada' => 'required',
+            'imagen' => 'image|max:1999'
         ]);
         $torneo->nombre = $data['nombre'];
         $torneo->texto = $data['texto'];
         $torneo->inscripcion_cerrada = $data['inscripcion_cerrada'];
+        if ($request->hasFile('imagen')) {
+            $path = Storage::disk('public')->put('img',$request->file('imagen'));
+            $torneo->imagen = $path;
+        }
         $torneo->save();
         return redirect(route('gestionTorneos',[$id]));
     }
