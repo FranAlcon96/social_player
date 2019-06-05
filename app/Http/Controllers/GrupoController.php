@@ -97,7 +97,7 @@ class GrupoController extends Controller
 
         $miembros = DB::table('miembro_grupo')
         ->join('usuario', 'miembro_grupo.id_usuario', '=', 'usuario.id')
-        ->select('usuario.usuario','miembro_grupo.id_usuario')
+        ->select('usuario.usuario','miembro_grupo.id_usuario','usuario.imagen')
         ->where('miembro_grupo.id_grupo','=',$id)
         ->get();
 

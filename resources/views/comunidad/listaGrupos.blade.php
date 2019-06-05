@@ -13,7 +13,7 @@
                                 <div class="frontside">
                                     <div class="card">
                                         <div class="card-body text-center">
-                                            <img class="img-fluid" src="img/game_default.jpg" alt="card image">
+                                            <img class="img-fluid" src="{{ $grupo->imagen }}" alt="card image">
                                             <h4 class="card-title">{{ $grupo->nombre }}</h4>
                                             <h6 class="card-text">Un grupo de {{ $grupo->titulo }}</h6>
                                             <?php $date = Carbon\Carbon::parse($grupo->created_at);?>
