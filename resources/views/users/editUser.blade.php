@@ -6,7 +6,7 @@
 				<div class="col-12">
 					<img class="form-icon" src="{{asset('img/formulario-login-icon.png')}}">
 				</div>
-				<form class="col-12" method="POST" action="{{ route('updateUser',[$user->id]) }}">
+				<form class="col-12" method="POST" action="{{ route('updateUser',[$user->id]) }}" enctype="multipart/form-data">
 					@csrf
 					<div class="form-inline">
 						<input type="text" class="input-medio" id="input-nombre" name="nombre" placeholder="Nombre" value="{{ $user->nombre }}">
@@ -27,6 +27,9 @@
 								<option value="{{ $juego->nombre }}">{{ $juego->nombre }}</option>
 							@endforeach
 						</select>
+					</div>
+					<div class="form-group">
+						<input type="file" name="imagen" class="form-control input-completo">
 					</div>
 					<button type="submit" class="btn btn-primary enviar"><i class="fas fa-archive"></i> Editar</button>
 				</form>

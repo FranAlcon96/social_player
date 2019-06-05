@@ -8,6 +8,8 @@ use DB;
 use App\Juego;
 use App\Solicitud;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 {
@@ -40,7 +42,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-    //Debugbar::info($request);
         $data = request()->validate([
             'nombre' => 'required',
             'apellidos' => 'required',
@@ -50,8 +51,9 @@ class UserController extends Controller
             'password' => 'required',
             'juego_favorito' => 'required',
             'password-confirm' => 'required',
-            'imagen' => 'required'
+            'imagen' => 'image|max:1999'
         ]);
+
          $usuario =  User::create([
             'nombre' => $data['nombre'],
             'apellidos' => $data['apellidos'],
@@ -60,8 +62,14 @@ class UserController extends Controller
             'usuario' => $data['usuario'],
             'password' => Hash::make($data['password']),
             'juego_favorito' => $data['juego_favorito'],
-            'imagen' => $data['imagen']
+            'imagen' => 'img/game_default.jpg'
         ]);
+
+         if ($request->hasFile('imagen')) {
+            $path = Storage::disk('public')->put('img',$request->file('imagen'));
+            $usuario->imagen = $path;
+            $usuario->save();
+        }
         return redirect('/')->with('success', 'Usuario registrado correctamente.');
     }
 
@@ -76,12 +84,11 @@ class UserController extends Controller
         $user = User::find($id);
         $count_opiniones = DB::table('opinion')->where('id_usuario','=',$id)->count();
         $count_mensajes = DB::table('mensaje')->where('id_usuario','=',$id)->count();
-        $count_torneos = DB::table('participa')->where('id_equipo','=',$id)->count();
         $solicitudes = Solicitud::where('id_usuario','=',$id)
             ->where('estado','=','pendiente')
             ->with('equipo')
             ->get();
-        return view('users.profile',compact('user','count_opiniones','count_mensajes','count_torneos','solicitudes'));
+        return view('users.profile',compact('user','count_opiniones','count_mensajes','solicitudes'));
     }
 
     /**
@@ -106,6 +113,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //return $request->file('imagen');
         $user = User::find($id);
         $data = request()->validate([
             'nombre' => 'required',
@@ -114,7 +122,13 @@ class UserController extends Controller
             'email' => 'required',
             'usuario' => 'required',
             'juego_favorito' => 'required',
+            'imagen' => 'image|max:1999'
         ]);
+
+        if ($request->hasFile('imagen')) {
+            $path = Storage::disk('public')->put('img',$request->file('imagen'));
+            $user->imagen = $path;
+        }
         $user->nombre = $data['nombre'];
         $user->apellidos = $data['apellidos'];
         $user->edad = $data['edad'];

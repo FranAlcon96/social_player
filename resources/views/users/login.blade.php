@@ -30,7 +30,7 @@
 				<div class="col-12">
 					<img class="form-icon" src="{{asset('img/formulario-login-icon.png')}}">
 				</div>
-				<form class="col-12" method="POST" action="{{ route('registro') }}">
+				<form class="col-12" method="POST" action="{{ route('registro') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="form-inline">
 						<input type="text" class="input-medio" id="input-nombre" name="nombre" placeholder="Nombre">
