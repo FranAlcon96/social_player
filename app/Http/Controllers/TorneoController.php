@@ -67,6 +67,7 @@ class TorneoController extends Controller
             'equipos' => 0,
             'inscripcion_cerrada' => 0,
             'finalizado' => 0,
+            'equipo_ganador' => 0,
             'imagen' => 'img/game_default.jpg'
         ]);
 

@@ -113,7 +113,8 @@ class GrupoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $grupo = Grupo::find($id);
+        return view ('comunidad.editGrupo',compact('grupo'));
     }
 
     /**
@@ -125,7 +126,20 @@ class GrupoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ]);
+
+        $grupo = Grupo::find($id);
+        $grupo->nombre = request('nombre');
+        $grupo->descripcion = request('descripcion');
+        if ($request->hasFile('imagen')) {
+            $path = Storage::disk('public')->put('img',$request->file('imagen'));
+            $grupo->imagen = $path;
+        }
+        $grupo->save();
+
     }
 
     /**
@@ -136,7 +150,8 @@ class GrupoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Grupo::destroy($id);
+        return back();
     }
 
     public function membresia($id_grupo,$id_usuario){

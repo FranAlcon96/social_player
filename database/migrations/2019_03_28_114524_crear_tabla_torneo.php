@@ -22,6 +22,7 @@ class CrearTablaTorneo extends Migration
             $table->Integer('finalizado');
             $table->string('imagen');
             $table->longText('texto');
+            $table->bigInteger('equipo_ganador')->nullable();
             $table->timestamps();
             $table->foreign('id_juego')->references('id')->on('juego');
             $table->foreign('id_creador')->references('id')->on('usuario');

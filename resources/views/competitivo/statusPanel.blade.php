@@ -76,6 +76,15 @@
 					</div>
 				</div>
 			</div>
+			@if ($torneo->inscripcion_cerrada === 0)
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 offset-md-3">
+						aqui se establecerá el ganador determinado por el usuario y
+					</div>
+				</div>
+			</div>
+			@endif
 		</div>
 	</div>
 </div>

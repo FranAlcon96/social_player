@@ -31,6 +31,12 @@
                                             <p class="card-text">{{ $grupo->descripcion }}</p>
                                             @endif
                                             <a href="{{ route('grupo',[$grupo->id,auth()->user()->id]) }}">Ir a la página del grupo.</a>
+                                            @if ($grupo->id === auth()->user()->id)
+                                            <br><br>
+                                            <h5>Administrar grupo: </h5>
+                                            <a href="{{ route('editGrupo',[$grupo->id]) }}">Editar Grupo</a><br>
+                                            <a href="{{ route('destroyGrupo',[$grupo->id]) }}">Eliminar Grupo</a><br>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
