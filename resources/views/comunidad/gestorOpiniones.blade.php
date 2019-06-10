@@ -3,7 +3,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12 bg-dark p-3">
-			<h1 class="text-light text-center">Gestoniar opiniones</h1>
+			<h1 class="text-light text-center">Gestionar opiniones</h1>
 			<div class="container">
 				<div class="row">
 					<div class="col-12 gestion-opiniones-container">
