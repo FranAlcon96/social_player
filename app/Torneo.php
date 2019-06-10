@@ -18,4 +18,11 @@ class Torneo extends Model
 	  {
 	    return $this->belongsTo(Juego::class,'id_juego');
 	  }
+
+	    public function scopeId_juego($query, $id_juego){
+	    	if ($id_juego != "") {
+	    		$query->where('id_juego',$id_juego)
+	    			->orWhere('id_juego', 'like', '%' . $id_juego . '%');
+	    	}
+    	}
 }

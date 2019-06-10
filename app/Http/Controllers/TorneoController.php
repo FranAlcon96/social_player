@@ -25,7 +25,9 @@ class TorneoController extends Controller
     public function index()
     {
         $juegos = Juego::all()->sortBy("nombre");
-        $torneos = Torneo::with('usuario')
+        $torneos = Torneo::id_juego(request()
+                   ->get('id_juego'))
+                   ->with('usuario')
                    ->with('juego')
                    ->paginate(10);
         return view('competitivo.listaTorneos',compact('juegos','torneos'));
