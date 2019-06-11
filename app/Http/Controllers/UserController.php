@@ -53,6 +53,10 @@ class UserController extends Controller
             'imagen' => 'image|max:1999'
         ]);
 
+        if ($data['password'] != $data['password-confirm']) {
+            return "la contraseña no coincide.";
+        }
+
          $usuario =  User::create([
             'nombre' => $data['nombre'],
             'apellidos' => $data['apellidos'],

@@ -18,7 +18,6 @@ class CrearTablaEquipo extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('logo');
-            $table->integer('miembros');
             $table->bigInteger('id_usuario')->unsigned();
             $table->bigInteger('id_juego')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('usuario');

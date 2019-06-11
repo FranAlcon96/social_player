@@ -46,6 +46,13 @@ class EquipoController extends Controller
      */
     public function store(Request $request)
     {
+        $data = request()->validate([
+            'id_juego' => 'required',
+            'descripcion' => 'required',
+            'nombre' => 'required',
+            'logo' => 'image'
+        ]);
+
         $equipo =  Equipo::create([
             'id_usuario' => Auth::user()->id,
             'id_juego' => request('id_juego'),
