@@ -1,5 +1,18 @@
 @extends('layouts.layout')
 @section('contenido')
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3 mt-3">
+			@if (session()->has('errorPassword'))
+				<div class="alert alert-danger" role="alert">{{ session('errorPassword') }}</div>
+			@elseif(session()->has('success'))
+				<div class="alert alert-success" role="alert">{{ session('success') }}</div>
+			@elseif(session()->has('failLogin'))
+				<div class="alert alert-danger" role="alert">{{ session('failLogin') }}</div>
+			@endif
+		</div>
+	</div>
+</div>
 <div class="contenedor-formulario">
 	<div class="modal-dialog text-center formulario">
 		<div class="col-sm-8 contenedor-form-login">
@@ -23,7 +36,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="modal-dialog text-center formulario">
 		<div class="col-sm-8 contenedor-form-login">
 			<div class="modal-content">
@@ -75,4 +87,13 @@
 		</div>
 	</div>
 </div>
+@endsection
+@section('scripts')
+<script type="text/javascript">
+$( document ).ready(function() {
+	setTimeout(function() {
+        $(".alert").fadeOut("slow");
+      },1500);
+});
+</script>
 @endsection

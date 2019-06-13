@@ -1,9 +1,11 @@
 @extends('layouts.layout')
-
 @section('contenido')
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12 video-section" id="video-section">
+			@if (session()->has('success'))
+				<div class="alert alert-success" role="alert">{{ session('loginSuccess') }}</div>
+			@endif
 			<div class="overlay"></div>
 			<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
 			    <source src="img/video.mp4" type="video/mp4">
@@ -75,4 +77,13 @@
 		</div>
 	</div>
 </div>
+@endsection
+@section('scripts')
+<script type="text/javascript">
+$( document ).ready(function() {
+	setTimeout(function() {
+        $(".alert").fadeOut("slow");
+      },1500);
+});
+</script>
 @endsection

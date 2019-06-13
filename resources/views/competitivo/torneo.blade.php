@@ -63,7 +63,7 @@
 							@endforelse
 							</ul>
 						</div>
-						@if($torneo->finalizado===0)
+						@if($torneo->finalizado===0 && $torneo->inscripcion_cerrada===0)
 						<div class="text-center mb-3">
 							<form method="post" action="{{ route('agregarParticipante',[$torneo->id]) }}">
 								@csrf

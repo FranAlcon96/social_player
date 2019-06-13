@@ -17,10 +17,6 @@
 								<td>{{ $equipo->nombre }}</td>
 							</tr>
 							<tr>
-								<th>Miembros</th>
-								<td>{{ $equipo->miembros }}</td>
-							</tr>
-							<tr>
 								<th>Creador</th>
 								<td>{{ $equipo->usuario->usuario }}</td>
 							</tr>

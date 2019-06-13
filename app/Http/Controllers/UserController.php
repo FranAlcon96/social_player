@@ -54,7 +54,7 @@ class UserController extends Controller
         ]);
 
         if ($data['password'] != $data['password-confirm']) {
-            return "la contraseña no coincide.";
+            return back()->with('errorPassword','La contraseña no coincide.');
         }
 
          $usuario =  User::create([
@@ -73,7 +73,7 @@ class UserController extends Controller
             $usuario->imagen = $path;
             $usuario->save();
         }
-        return redirect('/')->with('success', 'Usuario registrado correctamente.');
+        return back()->with('success', 'Usuario registrado correctamente.');
     }
 
     /**
@@ -161,16 +161,16 @@ class UserController extends Controller
             ]);
 
         if (Auth::attempt($datos)) {
-            return view('index');
+            return view('index')->with('loginSuccess','Usted ha iniciado sesión como '.$datos['usuario']);
         }
 
-        return view('users.login');
+        return back()->with('failLogin','Error al hacer login.');
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/')->with('logout','Sesión cerrada.');
     }
 
 }
