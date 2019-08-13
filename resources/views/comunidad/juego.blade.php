@@ -10,40 +10,42 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-5 offset-md-1 mb-3">
+					<div class="col-md-10 offset-md-1 mb-3">
 						<img src="../img/{{ $juego->imagen }}" class="img-juego">
 					</div>
-					<div class="col-md-6">
-						<table class="table table-striped table-dark ficha-tecnica">
-						  <tbody>
-						    <tr>
-						      <td>Desarrollador</td>
-						      <td>{{ $juego->desarrollador }}</td>
-						    </tr>
-						    <tr>
-						      <td>Año de salida</td>
-						      <td>{{ $juego->anio }}</td>
-						    </tr>
-						    <tr>
-						      <td>Género</td>
-						      <td>{{ $juego->genero }}</td>
-						    </tr>
-						    <tr>
-						      <td>Plataformas</td>
-						      <td>{{ $juego->plataformas }}</td>
-						    </tr>
-						    <tr>
-						      <td>Opiniones</td>
-						      <td>{{ $juego->opiniones }}</td>
-						    </tr>
-						    <tr>
-						      <td>Puntuación media</td>
-						      <td>{{ $juego->puntuacion_media }}</td>
-						    </tr>
-						  </tbody>
-						</table>
-					</div>
 				</div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 mb-3">
+                        <table class="table table-striped table-dark ficha-tecnica">
+                          <tbody>
+                            <tr>
+                              <td>Desarrollador</td>
+                              <td>{{ $juego->desarrollador }}</td>
+                            </tr>
+                            <tr>
+                              <td>Año de salida</td>
+                              <td>{{ $juego->anio }}</td>
+                            </tr>
+                            <tr>
+                              <td>Género</td>
+                              <td>{{ $juego->genero }}</td>
+                            </tr>
+                            <tr>
+                              <td>Plataformas</td>
+                              <td>{{ $juego->plataformas }}</td>
+                            </tr>
+                            <tr>
+                              <td>Opiniones</td>
+                              <td>{{ $juego->opiniones }}</td>
+                            </tr>
+                            <tr>
+                              <td>Puntuación media</td>
+                              <td>{{ $juego->puntuacion_media }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-12">
                         <h3 class="text-light text-center mb-3">Opiniones de los usuarios</h3>

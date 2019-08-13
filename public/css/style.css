@@ -162,7 +162,8 @@ body{
 /* Estilo de la página individual de cada juego */
 
 .img-juego{
-	width: 370px;
+  margin-left: 2.5%;
+	width: 95%;
 	height: 300px;
 	border-radius: 5%;
 }

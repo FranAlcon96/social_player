@@ -20,7 +20,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'PC',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'lol.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -31,7 +31,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'PC',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'heartstone.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -42,7 +42,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'Multiplataforma',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'diablo3.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -53,7 +53,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'PC',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'hots.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -64,7 +64,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'PS2',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'jak.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -75,7 +75,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'PS2',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'jak2.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -86,7 +86,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'PS2',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'jak3.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -97,7 +97,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'PSX',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 're.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -108,7 +108,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'Gamecube',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'ree.jpg'
         ]);
 
             DB::table('juego')->insert([
@@ -130,7 +130,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'Multiplataforma',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'bioshock2.jpg'
         ]);
 
            DB::table('juego')->insert([
@@ -141,7 +141,7 @@ class JuegoSeeder extends Seeder
             'plataformas' => 'Multiplataforma',
             'opiniones' => 0,
             'puntuacion_media' => 0,
-            'imagen' => 'game_default.jpg'
+            'imagen' => 'bioshock3.jpg'
         ]);
     }
 }
