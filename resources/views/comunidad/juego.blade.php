@@ -19,28 +19,28 @@
                         <table class="table table-striped table-dark ficha-tecnica">
                           <tbody>
                             <tr>
-                              <td>Desarrollador</td>
-                              <td>{{ $juego->desarrollador }}</td>
+                              <td class="text-center">Desarrollador</td>
+                              <td class="text-center">{{ $juego->desarrollador }}</td>
                             </tr>
                             <tr>
-                              <td>Año de salida</td>
-                              <td>{{ $juego->anio }}</td>
+                              <td class="text-center">Año de salida</td>
+                              <td class="text-center">{{ $juego->anio }}</td>
                             </tr>
                             <tr>
-                              <td>Género</td>
-                              <td>{{ $juego->genero }}</td>
+                              <td class="text-center">Género</td>
+                              <td class="text-center">{{ $juego->genero }}</td>
                             </tr>
                             <tr>
-                              <td>Plataformas</td>
-                              <td>{{ $juego->plataformas }}</td>
+                              <td class="text-center">Plataformas</td>
+                              <td class="text-center">{{ $juego->plataformas }}</td>
                             </tr>
                             <tr>
-                              <td>Opiniones</td>
-                              <td>{{ $juego->opiniones }}</td>
+                              <td class="text-center">Opiniones</td>
+                              <td class="text-center">{{ $juego->opiniones }}</td>
                             </tr>
                             <tr>
-                              <td>Puntuación media</td>
-                              <td>{{ $juego->puntuacion_media }}</td>
+                              <td class="text-center">Puntuación media</td>
+                              <td class="text-center">{{ $juego->puntuacion_media }}</td>
                             </tr>
                           </tbody>
                         </table>
