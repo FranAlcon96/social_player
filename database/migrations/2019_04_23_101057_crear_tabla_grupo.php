@@ -22,8 +22,8 @@ class CrearTablaGrupo extends Migration
             $table->string('imagen')->nullable();
             $table->integer('miembros');
             $table->timestamps();
-            $table->foreign('id_juego')->references('id')->on('juego');
-            $table->foreign('id_usuario')->references('id')->on('usuario');
+            $table->foreign('id_juego')->references('id')->on('juego')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('usuario')->onDelete('cascade');
         });
     }
 
