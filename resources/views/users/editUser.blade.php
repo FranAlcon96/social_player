@@ -31,7 +31,7 @@
 					<div class="form-group">
 						<input type="file" name="imagen" class="form-control input-completo">
 					</div>
-					<button type="submit" class="btn btn-primary enviar"><i class="fas fa-archive"></i> Editar</button>
+					<button type="submit" class="btn btn-primary enviar"><i class="fas fa-archive"></i> Guardar</button>
 				</form>
 			</div>
 		</div>
