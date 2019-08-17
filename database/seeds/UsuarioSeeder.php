@@ -21,7 +21,7 @@ class UsuarioSeeder extends Seeder
             'email' => 'fran@gmail.com',
             'usuario' => 'franalcon96',
             'password' => $pass,
-            'imagen' => 'user_default.jpg',
+            'imagen' => 'img/user_default.jpg',
             'juego_favorito' => 'League of Legends'
         ]);
 
@@ -32,7 +32,7 @@ class UsuarioSeeder extends Seeder
             'email' => 'lily@gmail.com',
             'usuario' => 'lilyfujoshi',
             'password' => $pass,
-            'imagen' => 'user_default.jpg',
+            'imagen' => 'img/user_default.jpg',
             'juego_favorito' => 'League of Legends'
         ]);
 

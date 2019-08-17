@@ -7,7 +7,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<img class="img-fluid img-user" src="../img/{{ $user->imagen }}">
+						<img class="img-fluid img-user" src="../{{ $user->imagen }}">
 					</div>
 					<div class="col-md-7 offset-md-1">
 						<h3 class="text-light text-center">Información</h3>
