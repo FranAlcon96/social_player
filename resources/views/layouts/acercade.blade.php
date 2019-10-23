@@ -10,7 +10,7 @@
 					<h2 class="display-4">¿ Quién soy ?</h2>
 					<p>Mi nombre es Fran Alcón, tengo 23 años y soy desarrollador web y multiplataforma. Actualmente trabajo en ayesa AT, en un proyecto web con web dynpro, un framework que permite la creación de aplicaciones web con java y SAP (ABAP).</p>
 					<p>Me considero un amante de la informática, los videojuegos, del rap y del ciclismo. Descubrí el mundo del desarrollo a los 20 años, año en el que dejé la carrera que estaba estudiando (Historia en la US) y decidí cambiar el rumbo de mi vida profesional. Desde pequeño siempre me han gustado los ordenadores, y siempre sentí curiosidad de como se realizaban los programas, así que tomé la decisión de estudiar programación por mi cuenta, y cuando vi lo que era programar supe que quería dedicarme a ello profesionalmente en cuerpo y alma.</p>
-					<p>Mis tecnologías favoritas son java (SE y EE), con JSF y Spring, de los cuales tengo unas nociones básicas y PHP con Laravel que hasta la fecha, es mi tecnología favorita, y en la que sigo aprendiendo cada día por mi cuenta.</p>
+					<p>Mis tecnologías favoritas son java (SE y EE), con JSF y Spring, de los cuales tengo unas nociones básicas y PHP con Laravel que hasta la fecha, es mi tecnología favorita, y en la que sigo aprendiendo cada día por mi cuenta. También estoy aprendiendo angular, bootstrap 4 y android por mi cuenta.</p>
 				</div>
 			</div>
 		</div>
