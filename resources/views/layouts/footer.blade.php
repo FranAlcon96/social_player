@@ -26,22 +26,22 @@
           </div>
           <hr class="clearfix w-100 d-md-none pb-3">
           <div class="col-md-3 mb-md-0 mb-3">
-            <h5 class="text-uppercase">Últimos torneos</h5>
+            <h5 class="text-uppercase">Nuevos juegos</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Torneo 1</a>
+                <a href="#!">Juego 1</a>
               </li>
               <li>
-                <a href="#!">Torneo 2</a>
+                <a href="#!">Juego 2</a>
               </li>
               <li>
-                <a href="#!">Torneo 3</a>
+                <a href="#!">Juego 3</a>
               </li>
               <li>
-                <a href="#!">Torneo 4</a>
+                <a href="#!">Juego 4</a>
               </li>
               <li>
-                <a href="#!">Torneo 5</a>
+                <a href="#!">Juego 5</a>
               </li>
             </ul>
           </div>
