@@ -17,9 +17,9 @@
     </head>
     <body>
         @include('layouts.menu')
-        <section>
+        <main>
           @yield('contenido')
-        </section>
+        </main>
         <footer class="page-footer font-small text-light pt-4">
             @include('layouts.footer')
         </footer>
