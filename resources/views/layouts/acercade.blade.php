@@ -1,4 +1,6 @@
-	<section class="quien-soy py-3 mt-3">
+@extends('layouts.layout')
+@section('contenido')
+    <div class="quien-soy py-3 mt-3">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-6 text-center">
@@ -79,4 +81,5 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+@endsection
