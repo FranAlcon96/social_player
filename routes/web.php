@@ -8,6 +8,10 @@ Route::get('/grupo/{$id}', function () {
     return view('comunidad.grupo');
 })->name('grupo');
 
+Route::get('/acercaDe', function () {
+    return view('layouts.acercaDe');
+})->name('acercaDe');
+
 Route::get('/listaJuegos','JuegoController@index')->name('juegos');
 Route::get('/show/{id}','JuegoController@show')->name('juego')->middleware('comprobarSesion');
 

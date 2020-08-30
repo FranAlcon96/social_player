@@ -26,22 +26,22 @@
           </div>
           <hr class="clearfix w-100 d-md-none pb-3">
           <div class="col-md-3 mb-md-0 mb-3">
-            <h5 class="text-uppercase">Nuevos juegos</h5>
+            <h5 class="text-uppercase">Otros proyectos</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Juego 1</a>
+                <a href="#!">Fransito Text</a>
               </li>
               <li>
-                <a href="#!">Juego 2</a>
+                <a href="#!">Fransito Explorer</a>
               </li>
               <li>
-                <a href="#!">Juego 3</a>
+                <a href="#!">Proyecto Agenda</a>
               </li>
               <li>
-                <a href="#!">Juego 4</a>
+                <a href="#!">Fransito Backup</a>
               </li>
               <li>
-                <a href="#!">Juego 5</a>
+                <a href="#!">Portal de actividades al aire libre</a>
               </li>
             </ul>
           </div>
