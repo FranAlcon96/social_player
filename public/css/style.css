@@ -134,8 +134,8 @@ body{
 /* Estilo del perfil de usuario */
 
 .img-user{
-  width: 400px;
-  height:350px;
+  width: 350px;
+  height:420px;
   border-radius: 50%;
   margin-bottom: 2rem;
 }
@@ -332,8 +332,8 @@ body{
   float: left;
 }
 .img-miembro{
-  width:110px;
-  height:110px;
+  width:120px;
+  height:150px;
   border-radius:50%;
 }
 

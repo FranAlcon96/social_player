@@ -37,7 +37,7 @@
 						<div class="row">
 							@foreach($miembros as $miembro)
 							<div>
-								<img src="../../../img/{{ $miembro->imagen }}" class="img-miembro m-3">
+								<a href="{{ route('perfil',$miembro->id) }}"><img src="../../../{{ $miembro->imagen }}" class="img-miembro m-3"><a/>
 								<p class="text-light text-center">{{ $miembro->usuario }}</p>
 							</div>
 							@endforeach
