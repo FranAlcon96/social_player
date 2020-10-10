@@ -9,7 +9,7 @@
 					<img class="img-fluid img-user" src="img/fran.jpg">
 				</div>
 				<div class="col-md-8">
-					<p class="text-light mt-3">Muy buenas a todos, soy Francisco José Alcón Piñero, creador y desarrollador de la plataforma social player, un espacio pensado por y para jugadores. Este proyecto surgió de la necesidad de una plataforma que permita unir a usuarios tanto para conocer gente nueva como para la faceta competitiva. </p>
+					<p class="text-light mt-3">Muy buenas a todos, soy Francisco José Alcón Piñero, creador y desarrollador de la plataforma social player, un espacio pensado por y para jugadores. Este proyecto surgió de la necesidad de una plataforma que permita unir a usuarios que compartan el mismo juego en común. </p>
 					<p class="text-light mt-1">Por lo que he aprovechado y he usado esta web como proyecto de fin de curso ya que es algo que siempre he querido hacer. La tecnología empleada para realizar el proyecto ha sido Laravel, un framework de php muy sencillo de usar pero muy potente para el desarrollo de aplicaciones web de gran embergadura. Recomiendo al 100% el uso de este framework para el desarrollo de proyectos web independientes.</p>
 					<p class="text-light mt-1">Podeis visualizar otros proyectos realizados por mi más abajo, en el footer de la web. Si pulsais en el nombre del proyecto os llevará al repositorio de github en el que está subido.</p>
 					<p class="text-light mt-1">Para cualquier duda, pregunta o sugerencia podeis enviar un correo electrónico al email que veis más abajo o bien podeis recurrir al siguiente formulario. Las cuestiones serán respondidas en la mayor brevedad posible. </p>

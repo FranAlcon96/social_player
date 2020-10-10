@@ -21,14 +21,25 @@ class GrupoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //$grupos = Grupo::latest()->paginate(9);
-        $grupos = DB::table('grupo')
-        ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
-        ->join('juego','grupo.id_juego','=','juego.id')
-        ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario', 'juego.nombre AS titulo','grupo.descripcion','grupo.id')
-        ->paginate(9);
+        // este código se puede optimizar de tal modo que solo habria que comprobar la linea y enchufarla a la consulta
+        // en caso de que el parámetro get sea diferente de nulo, pero no me furula si lo hago así.
+        $name = $request->input('filtroNombre');
+        if ($name != null) {
+            $grupos = DB::table('grupo')
+            ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
+            ->join('juego','grupo.id_juego','=','juego.id')
+            ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario', 'juego.nombre AS titulo','grupo.descripcion','grupo.id','grupo.id_usuario')
+            ->where('grupo.nombre', '=', $name)
+            ->paginate(9);
+        } else {
+            $grupos = DB::table('grupo')
+            ->join('usuario', 'grupo.id_usuario', '=', 'usuario.id')
+            ->join('juego','grupo.id_juego','=','juego.id')
+            ->select('grupo.nombre', 'grupo.imagen', 'grupo.miembros', 'grupo.created_at','usuario.usuario', 'juego.nombre AS titulo','grupo.descripcion','grupo.id','grupo.id_usuario')
+            ->paginate(9);
+        }
 
         return view('comunidad.listaGrupos',compact('grupos'));
     }
@@ -150,6 +161,8 @@ class GrupoController extends Controller
      */
     public function destroy($id)
     {
+        DB::table('mensaje')->where('id_grupo', $id)->delete();
+        DB::table('miembro_grupo')->where('id_grupo', $id)->delete();
         Grupo::destroy($id);
         return back();
     }

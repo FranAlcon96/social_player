@@ -31,7 +31,7 @@
                                             <p class="card-text">{{ $grupo->descripcion }}</p>
                                             @endif
                                             <a href="{{ route('grupo',[$grupo->id,auth()->user()->id]) }}">Ir a la página del grupo.</a>
-                                            @if ($grupo->id === auth()->user()->id)
+                                            @if ($grupo->id_usuario === auth()->user()->id)
                                             <br><br>
                                             <h5>Administrar grupo: </h5>
                                             <a href="{{ route('editGrupo',[$grupo->id]) }}">Editar Grupo</a><br>
@@ -49,10 +49,15 @@
 			<div class="text-center mb-3">
 				<span class="text-light">¿ No encuentra ningún grupo ? Puedes crear el tuyo propio <a href="{{ route('crearGrupo') }}">aquí</a></span>
 			</div>
-		</div>
-	</div>
-	<div class="row">
+                    <div class="col-md-2 bg-dark">
+            <h3 class="text-light text-center mb-3 mt-3">Buscar grupos</h3>
+            <form method="get" action="{{ route('grupos') }}" class="form">
+                <input type="text" name="filtroNombre" class="form-control" placeholder="Nombre del grupo...">
+                <center><button type="submit" class="btn btn-primary mt-3"><i class="fas fa-search"></i> Buscar</button></center>
+            </form>
+        </div>
 
+		</div>
 	</div>
 </div>
 @endsection

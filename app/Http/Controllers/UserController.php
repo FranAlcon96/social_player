@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 use App\Juego;
-use App\Solicitud;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -87,11 +86,7 @@ class UserController extends Controller
         $user = User::find($id);
         $count_opiniones = DB::table('opinion')->where('id_usuario','=',$id)->count();
         $count_mensajes = DB::table('mensaje')->where('id_usuario','=',$id)->count();
-        $solicitudes = Solicitud::where('id_usuario','=',$id)
-            ->where('estado','=','pendiente')
-            ->with('equipo')
-            ->get();
-        return view('users.profile',compact('user','count_opiniones','count_mensajes','solicitudes'));
+        return view('users.profile',compact('user','count_opiniones','count_mensajes'));
     }
 
     /**

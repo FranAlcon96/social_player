@@ -26,7 +26,6 @@ Route::get('/grupo/membresia/{id_juego}/{id_usuario}','GrupoController@membresia
 Route::get('/grupo/abandonar/{id_juego}/{id_usuario}','GrupoController@abandonar')->name('membresiaAbandonar');
 
 Route::post('/mensajes/store/{id_grupo}/{id_usuario}','MensajeController@store')->name('crearMensaje');
-
 Route::post('/opiniones/store/{id_juego}/{id_usuario}','OpinionController@store')->name('crearOpinion');
 
 Route::get('/sesion','UserController@create')->name('sesion')->middleware('guest');
@@ -34,7 +33,7 @@ Route::get('/editUser/{id}','UserController@edit')->name('editUser');
 Route::post('/updateUser/{id}','UserController@update')->name('updateUser');
 Route::post('login','UserController@login')->name('login');
 Route::post('registro','UserController@store')->name('registro');
-Route::post('logout','UserController@logout')->name('logout');
+Route::get('logout','UserController@logout')->name('logout');
 Route::get('perfil/{id}','UserController@show')->name('perfil');
 
 Route::get('mensajes/{id}/like', 'MensajeController@like')->name('mensajes.like');
@@ -48,7 +47,7 @@ Route::get('/eliminarOpinion/{id}','OpinionController@destroy')->name('eliminarO
 Route::get('/editarOpinion/{id}','OpinionController@edit')->name('editarOpinion');
 Route::post('/updateOpinion/{id}','OpinionController@update')->name('updateOpinion');
 
-Route::get('/listarTorneos','TorneoController@index')->name('listarTorneos');
+/*Route::get('/listarTorneos','TorneoController@index')->name('listarTorneos');
 Route::get('/crearTorneo','TorneoController@create')->name('crearTorneo');
 Route::post('/crearTorneo','TorneoController@store')->name('storeTorneo');
 Route::get('/editarTorneo/{id}','TorneoController@edit')->name('editarTorneo');
@@ -69,8 +68,8 @@ Route::post('/storeEquipo','EquipoController@store')->name('storeEquipo');
 Route::get('/editarEquipo/{id}','EquipoController@edit')->name('editarEquipo');
 Route::post('/updateEquipo/{id}','EquipoController@update')->name('updateEquipo');
 Route::get('/deleteEquipo/{id}','EquipoController@destroy')->name('deleteEquipo');
-Route::get('/filtroUsuarios/{filtro?}','EquipoController@filtroUsuarios')->name('filtroUsuarios');
+Route::get('/filtroUsuarios/{filtro?}','EquipoController@filtroUsuarios')->name('filtroUsuarios');*/
 
-Route::get('/enviarSolicitud/{id_equipo}/{id_usuario}','SolicitudController@store')->name('enviarSolicitud');
+/*Route::get('/enviarSolicitud/{id_equipo}/{id_usuario}','SolicitudController@store')->name('enviarSolicitud');
 Route::get('/aceptarSolicitud/{id}','SolicitudController@aceptarSolicitud')->name('aceptarSolicitud');
-Route::post('/agregarParticipante/{id_torneo}','TorneoController@agregarParticipante')->name('agregarParticipante');
+Route::post('/agregarParticipante/{id_torneo}','TorneoController@agregarParticipante')->name('agregarParticipante');*/

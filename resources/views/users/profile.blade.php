@@ -48,24 +48,6 @@
 		</div>
 	</div>
 </div>
-@if (auth()->user()->id === $user->id)
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-12 bg-dark text-center">
-			<h3 class="text-light mt-3 mb-3">Solicitudes pendientes</h3>
-			@forelse ($solicitudes as $s)
-			<div>
-				<span class="text-light">Solicitud de unión al equipo ejemplo:</span>
-				<a href="{{ route('aceptarSolicitud',[$s->id]) }}"><button class="btn btn-primary m-1"><i class="fas fa-check"></i></button></a>
-				<a href="#"><button class="btn btn-danger m-1"><i class="fas fa-times"></i></button></a>
-			</div>
-			@empty
-			<p class="text-light">No hay solicitudes pendientes</p>
-			@endforelse
-		</div>
-	</div>
-</div>
-@endif
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12 bg-dark actividad-perfil text-center p-3">

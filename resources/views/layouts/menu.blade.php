@@ -18,19 +18,6 @@
                 </div>
               </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Competitivo
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('crearEquipo') }}">Crear equipo</a>
-                  <a class="dropdown-item" href="{{ route('listaEquipos') }}">Administrar Equipos</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{{ route('listarTorneos') }}">Torneos</a>
-                  <a class="dropdown-item" href="{{ route('crearTorneo') }}">Crear torneo</a>
-                  <a class="dropdown-item" href="{{ route('gestionTorneos') }}">Gestionar torneos</a>
-                </div>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('acercaDe') }}">Acerca de</a>
               </li>
@@ -49,8 +36,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('perfil',[auth()->user()->id]) }}">Mi Perfil</a>
-                  <form action="{{ route('logout') }}" method="post" id="logout-form">
-                    @csrf
+                  <form action="{{ route('logout') }}" method="get" id="logout-form">
                   <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()">Logout</a>
                   </form>
                 </div>

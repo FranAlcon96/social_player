@@ -9,19 +9,18 @@
             <h5 class="text-uppercase">Redes sociales</h5>
             <ul class="list-unstyled list-inline redes-sociales">
               <li class="list-inline-item">
-                <a href="#!"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.facebook.com/franciscojose.alconpinero/" target="_blank"><i class="fab fa-facebook"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#!"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://twitter.com/FranAlcon96/" target="_blank"><i class="fab fa-twitter-square"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#!"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/franalcon96/?hl=es/" target="_blank"><i class="fab fa-instagram"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#!"><i class="fab fa-github-square"></i></a>
+                <a href="https://github.com/FranAlcon96/" target="_blank"><i class="fab fa-github-square"></i></a>
               </li>
             </ul>
-
             <p><i class="fas fa-envelope"></i> fcojosealcpin@gmail.com</p>
           </div>
           <hr class="clearfix w-100 d-md-none pb-3">
@@ -29,19 +28,19 @@
             <h5 class="text-uppercase">Otros proyectos</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Fransito Text</a>
+                <a href="https://github.com/FranAlcon96/Fransito-Text" target="_blank">Fransito Text</a>
               </li>
               <li>
-                <a href="#!">Fransito Explorer</a>
+                <a href="https://github.com/FranAlcon96/Fransito-Explorer" target="_blank">Fransito Explorer</a>
               </li>
               <li>
-                <a href="#!">Proyecto Agenda</a>
+                <a href="https://github.com/FranAlcon96/AgendaPersonal" target="_blank">Proyecto Agenda</a>
               </li>
               <li>
-                <a href="#!">Fransito Backup</a>
+                <a href="https://github.com/FranAlcon96/Fransito-Backup" target="_blank">Fransito Backup</a>
               </li>
               <li>
-                <a href="#!">Portal de actividades al aire libre</a>
+                <a href="https://github.com/FranAlcon96/PI_2018" target="_blank">Portal de actividades al aire libre</a>
               </li>
             </ul>
           </div>

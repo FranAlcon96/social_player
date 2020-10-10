@@ -83,7 +83,7 @@
                                             </div>
                                         </li>
                                         @empty
-                                        <h5 class="text-light text-center">No hay ná</p>
+                                        <h5 class="text-light text-center">No existen comentarios.</p>
                                         @endforelse
                                         {{ $comentarios->links() }}
                                     </ul>

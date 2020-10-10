@@ -17,7 +17,7 @@ class UsuarioSeeder extends Seeder
         DB::table('usuario')->insert([
             'nombre' => 'Fran',
             'Apellidos' => 'Alcón',
-            'edad' => 23,
+            'edad' => 24,
             'email' => 'fran@gmail.com',
             'usuario' => 'franalcon96',
             'password' => $pass,
@@ -26,11 +26,11 @@ class UsuarioSeeder extends Seeder
         ]);
 
         DB::table('usuario')->insert([
-            'nombre' => 'Lily',
-            'Apellidos' => 'Villatoro',
-            'edad' => 20,
-            'email' => 'lily@gmail.com',
-            'usuario' => 'lilyfujoshi',
+            'nombre' => 'Juan',
+            'Apellidos' => 'Alcón',
+            'edad' => 21,
+            'email' => 'juan@gmail.com',
+            'usuario' => 'darkjuan14',
             'password' => $pass,
             'imagen' => 'img/user_default.jpg',
             'juego_favorito' => 'League of Legends'

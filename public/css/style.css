@@ -421,6 +421,7 @@ font-size: 17px;
 
 .contenedor-formulario .formulario{
 	display: none;
+  margin-bottom: 300px;
 }
 
 .contenedor-formulario .formulario:nth-child(1){

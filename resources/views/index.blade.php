@@ -43,12 +43,12 @@
 						<div class="col-md-4 cajita-info text-light text-center mt-4">
 							<h4 >Conoce gente</h4>
 							<img src="img/contenido-1.jpg">
-							<p>En tu comunidad, ponte en contacto con otros/as jugadores/as y disfruta de tus juegos favoritos en la mejor compañía. Crea equipos con otros jugadores.</p>
+							<p>En tu comunidad, ponte en contacto con otros/as jugadores/as y disfruta de tus juegos favoritos en la mejor compañía.</p>
 						</div>
 						<div class="col-md-3 cajita-info text-light text-center mt-4">
-							<h4>Crea torneos o participa</h4>
+							<h4>Respeta las normas</h4>
 							<img src="img/contenido-3.jpg">
-							<p>En social player queremos realzar la faceta competitiva entre jugadores, para ello tenemos nuestro sistema de torneos.
+							<p>Se ruega respetar siempre a los demás y abstenernos de insultos u otras falta de respeto.
 							</p>
 						</div>
 					</div>
@@ -67,8 +67,8 @@
 							<h2 class="text-light text-center">El protagonista eres tú</h2>
 							<p class="text-light text-center">Social player es una plataforma realizada por y para el disfrute de toda persona que ame el mundo de los videojuegos, y se encuentra totalmente abierta a sugerencias para poder mejorar cada día.</p>
 							<div class="contenido-info-section-botones text-center">
-								<button class="btn btn-outline-primary">Registrarse</button>
-								<button class="btn btn-outline-success">Leer más</button>
+								<<a href="{{ route('sesion') }}"><button class="btn btn-outline-primary">Registrarse</button>
+								<a href="{{ route('acercaDe') }}"><button class="btn btn-outline-success">Leer más</button></a>
 							</div>
 						</div>
 					</div>
