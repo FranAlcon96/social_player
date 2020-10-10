@@ -6,7 +6,7 @@
 			<h1 class="text-center text-light mt-3 mb-3">acerca de social player</h1>
 			<div class="row">
 				<div class="col-md-3">
-					<img class="img-fluid img-user" src="img/fran.jpg">
+					<img class="img-fluid img-acercade" src="img/fran.jpg">
 				</div>
 				<div class="col-md-8">
 					<p class="text-light mt-3">Muy buenas a todos, soy Francisco José Alcón Piñero, creador y desarrollador de la plataforma social player, un espacio pensado por y para jugadores. Este proyecto surgió de la necesidad de una plataforma que permita unir a usuarios que compartan el mismo juego en común. </p>

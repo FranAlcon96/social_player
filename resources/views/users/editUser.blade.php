@@ -28,8 +28,12 @@
 							@endforeach
 						</select>
 					</div>
-					<div class="form-group">
+					<!--<div class="form-group">
 						<input type="file" name="imagen" class="form-control input-completo">
+					</div>-->
+					<div class="custom-file">
+					  <input type="file" class="custom-file-input" id="customFileLang" name="imagen">
+					  <label class="custom-file-label" for="customFileLang">Imagen</label>
 					</div>
 					<button type="submit" class="btn btn-primary enviar"><i class="fas fa-archive"></i> Guardar</button>
 				</form>

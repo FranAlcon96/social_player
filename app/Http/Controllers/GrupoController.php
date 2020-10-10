@@ -112,7 +112,7 @@ class GrupoController extends Controller
         ->where('miembro_grupo.id_grupo','=',$id)
         ->get();
 
-        $comentarios = Mensaje::with('usuario')->where('id_grupo','=',$id)->paginate(4);
+        $comentarios = Mensaje::with('usuario')->where('id_grupo','=',$id)->paginate(3);
         return view('comunidad.grupo',compact('grupo','count','miembros','comentarios'));
     }
 
@@ -150,7 +150,7 @@ class GrupoController extends Controller
             $grupo->imagen = $path;
         }
         $grupo->save();
-
+        return redirect()->action('GrupoController@index');
     }
 
     /**
