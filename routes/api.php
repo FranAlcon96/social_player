@@ -16,3 +16,15 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/* API REST JUEGOS */
+
+Route::get('/juegos', 'ApiJuegoController@index');
+
+Route::put('/juegos/actualizar/{id}', 'ApiJuegoController@update');
+
+Route::post('/juegos/guardar', 'ApiJuegoController@store');
+
+Route::delete('/juegos/borrar/{id}', 'ApiJuegoController@destroy');
+
+Route::get('/juegos/buscar/{id}', 'ApiJuegoController@show');
